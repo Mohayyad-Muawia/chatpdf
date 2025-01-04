@@ -1,0 +1,29 @@
+:root{
+  --bg: #0A1307;
+  --txt: #fff;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: var(--bg);
+  color: var(--txt);
+  height: 100vh;
+  overflow: hidden;
+}
+.home{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding: 40px 200px;
+  height: 100vh;
+}
+.circle{
+  position: absolute;
+  top: 50vh;
+  background: #000;
+  height: 50vh;
+}
