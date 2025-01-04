@@ -1,18 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 :root{
+  --primary: #087C4C;
   --bg: #0A1307;
-  --txt: #fff;
+  --white: #fff;
+  --black: #000;
 }
 *{
   margin: 0;
   padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
   box-sizing: border-box;
 }
 body{
   background: var(--bg);
-  color: var(--txt);
+  color: var(--white);
   height: 100vh;
   overflow: hidden;
+  font-family: "Inter", serif;
 }
+.circle{
+  position: absolute;
+  top: 50vh;
+  height: 50vh;
+}
+.btn-primary, .btn-secondary{
+  color: var(--white);
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-primary{
+  background: var(--primary);
+  color: var(--black);
+  svg,path{
+    fill: var(--black);
+  }
+}
+.btn-secondary{
+  /* background: var(--white); */
+  border-color: var(--primary);
+  color: var(--primary);
+  svg,path{
+    fill: var(--primary);
+  }
+}
+
+
 .home{
   display: flex;
   align-items: center;
@@ -21,9 +64,30 @@ body{
   padding: 40px 200px;
   height: 100vh;
 }
-.circle{
-  position: absolute;
-  top: 50vh;
-  background: #000;
-  height: 50vh;
+.welcome{
+  line-height: 70px;
+  text-align: center;
+  font-family: "Baloo Bhaina 2", serif;
+  
+  h2{
+    font-size: 45px;
+  }
+  h1{
+    font-size: 90px;
+    font-weight: 900;
+  }
+
+}
+
+.btns{
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  
+  a{
+  
+    svg{
+      fill: var(--txt);
+    }
+  }
 }
