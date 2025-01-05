@@ -31,8 +31,8 @@ const Home = () => {
           About
         </div>
       </Link>
-      <div className='text-white text-center text-2xl text-wrap px-6 pt-10 '>
-        ChatPDf IS a Powerful tool that allows you to easily upload PDF files
+      <div className='text-white text-center text-2xl max-w-6xl content-center px-6 pt-10 mx-auto'>
+        ChatPDF is a powerful tool that allows you to easily upload PDF files
         and interact with their content through a chat interface. Whether you
         need to extract information, summarize text, or ask specific questions,
         ChatPDF makes it simple and efficient.
