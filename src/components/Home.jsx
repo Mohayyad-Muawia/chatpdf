@@ -32,10 +32,10 @@ const Home = () => {
         </div>
       </Link>
       <div className='text-green-100 text-center text-2xl font-mono max-w-6xl content-center px-6 pt-10 mx-auto'>
-        ChatPDF is a powerful tool that allows you to easily upload PDF files
-        and interact with their content through a chat interface. Whether you
-        need to extract information, summarize text, or ask specific questions,
-        ChatPDF makes it simple and efficient.
+        ChatPDF is a powerful tool that allows you to easily upload
+        PDF,TXT,DOCX,PPTX files and interact with their content through a chat
+        interface. Whether you need to extract information, summarize text, or
+        ask specific questions, ChatPDF makes it simple and efficient.
       </div>
     </div>
   )
