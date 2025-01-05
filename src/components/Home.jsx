@@ -7,7 +7,7 @@ const Home = () => {
         <h2 className='text-white text-center  pt-28 pb-5 text-5xl font-semibold '>
           Welcome to
         </h2>
-        <h1 className='text-white text-center text-8xl font-mono font-bold  mb-8'>
+        <h1 className='text-white text-center text-8xl font-bold  mb-8'>
           CHAT PDF
         </h1>
       </div>
