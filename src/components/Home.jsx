@@ -4,10 +4,10 @@ const Home = () => {
   return (
     <div className='home'>
       <div className='welcome'>
-        <h2 className='text-white text-center py-28 text-5xl font-semibold'>
+        <h2 className='text-white text-center pt-28 pb-5 text-5xl font-semibold '>
           Welcome to
         </h2>
-        <h1 className='text-white text-center text-4xl -mt-20 mb-8'>
+        <h1 className='text-white text-center text-8xl font-mono font-bold  mb-8'>
           CHAT PDF
         </h1>
       </div>
@@ -31,6 +31,10 @@ const Home = () => {
           About
         </div>
       </Link>
+      <div className='text-white text-center text-2xl text-wrap px-6 pt-10 '>
+        ChatPDf IS a Powerful
+       tool that allows you to easily upload PDF files and interact with their content through a chat interface. Whether you need to extract information, summarize text, or ask specific questions, ChatPDF makes it simple and efficient.
+      </div>
     </div>
   )
 }
