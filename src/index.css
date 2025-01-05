@@ -47,7 +47,6 @@ body{
   }
 }
 .btn-secondary{
-  /* background: var(--white); */
   border-color: var(--primary);
   color: var(--primary);
   svg,path{
@@ -82,7 +81,7 @@ body{
 .btns{
   margin-top: 20px;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   
   a{
   
