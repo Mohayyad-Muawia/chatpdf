@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className='home'>
       <div className='welcome'>
-        <h2 className='text-white text-center pt-28 pb-5 text-5xl font-semibold '>
+        <h2 className='text-white text-center  pt-28 pb-5 text-5xl font-semibold '>
           Welcome to
         </h2>
         <h1 className='text-white text-center text-8xl font-mono font-bold  mb-8'>
@@ -15,25 +15,27 @@ const Home = () => {
       <div className='text-white flex gap-20 px-4 justify-center'>
         <Link
           to='/upload'
-          className='border-green-700  hover:bg-green-900 transition border-2 px-12 rounded-md py-4 text-lg font-semibold'
+          className='border-green-700 active:bg-green-950  hover:bg-green-900 transition border-2 px-12 rounded-md py-4 text-lg font-semibold'
         >
           Upload File
         </Link>
         <Link
           to='/chat'
-          className='bg-green-950 hover:bg-green-900 transition px-12 rounded-md py-4 text-lg font-semibold'
+          className='bg-green-950 hover:bg-green-900 active:bg-green-950 transition px-12 rounded-md py-4 text-lg font-semibold'
         >
           Start Chatting
         </Link>
       </div>
       <Link to='/team'>
-        <div className='text-white text-center font-semibold  mt-4 transition hover:bg-green-800 mx-auto w-1/2 rounded-md content-center text-lg max-w-lg py-5 bg-green-950 '>
+        <div className='text-white active:bg-green-950 text-center font-semibold  mt-4 transition hover:bg-green-800 mx-auto w-1/2 rounded-md content-center text-lg max-w-lg py-5 bg-green-950 '>
           About
         </div>
       </Link>
       <div className='text-white text-center text-2xl text-wrap px-6 pt-10 '>
-        ChatPDf IS a Powerful
-       tool that allows you to easily upload PDF files and interact with their content through a chat interface. Whether you need to extract information, summarize text, or ask specific questions, ChatPDF makes it simple and efficient.
+        ChatPDf IS a Powerful tool that allows you to easily upload PDF files
+        and interact with their content through a chat interface. Whether you
+        need to extract information, summarize text, or ask specific questions,
+        ChatPDF makes it simple and efficient.
       </div>
     </div>
   )
