@@ -15,17 +15,22 @@ const Home = () => {
       <div className='text-white flex gap-20 px-4 justify-center'>
         <Link
           to='/upload'
-          className='border-green-700 bg-green-950 border-2 px-12 rounded-md py-2 text-lg font-semibold'
+          className='border-green-700  hover:bg-green-900 transition border-2 px-12 rounded-md py-4 text-lg font-semibold'
         >
           Upload File
         </Link>
         <Link
           to='/chat'
-          className='bg-green-950 hover:bg-green-900 transition  px-12 rounded-md py-2 text-lg font-semibold'
+          className='bg-green-950 hover:bg-green-900 transition px-12 rounded-md py-4 text-lg font-semibold'
         >
           Start Chatting
         </Link>
       </div>
+      <Link to='/team'>
+        <div className='text-white text-center font-semibold  mt-4 transition hover:bg-green-800 mx-auto w-1/2 rounded-md content-center text-lg max-w-lg py-5 bg-green-950 '>
+          About
+        </div>
+      </Link>
     </div>
   )
 }
