@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const Upload = () => {
   const [isDragging, setIsDragging] = useState(false)
@@ -21,7 +21,7 @@ const Upload = () => {
   }
 
   return (
-    <div className='upload flex justify-center'>
+    <div className="upload flex justify-center">
       <div
         className={`border-4 p-8 rounded-md w-full max-w-4xl flex transition justify-center items-center ${
           isDragging
@@ -33,10 +33,10 @@ const Upload = () => {
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
       >
-        <input type='file' className='hidden' id='fileUpload' />
+        <input type="file" className="hidden" id="fileUpload" />
         <label
-          htmlFor='fileUpload'
-          className='bg-transparent animate-bounce cursor-pointer text-gray-400/90 text-lg text-center'
+          htmlFor="fileUpload"
+          className="bg-transparent animate-bounce cursor-pointer text-gray-400/90 text-lg text-center"
         >
           {isDragging
             ? 'Drop files here'

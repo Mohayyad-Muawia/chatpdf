@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -16,7 +16,7 @@ const Home = () => {
         <Link
           to="/upload"
           className="flex gap-4 items-center justify-center bg-green-950 hover:bg-green-900 active:bg-green-950 transition px-8 rounded-md py-4 font-semibold"
-          style={{ flex: "1 0 calc(33.33% - 1rem)", textAlign: "center" }}
+          style={{ flex: '1 0 calc(33.33% - 1rem)', textAlign: 'center' }}
         >
           <img src="/assets/upload.svg" alt="upload" className="w-5 h-5" />
           Upload File
@@ -24,7 +24,7 @@ const Home = () => {
         <Link
           to="/chat"
           className="flex gap-4 items-center justify-center border-green-950 active:bg-green-950 hover:bg-green-900 hover:border-green-900 transition border-2 px-8 rounded-md py-4 font-semibold"
-          style={{ flex: "1 0 calc(33.33% - 1rem)", textAlign: "center" }}
+          style={{ flex: '1 0 calc(33.33% - 1rem)', textAlign: 'center' }}
         >
           <img src="/assets/chat.svg" alt="upload" className="w-5 h-5" />
           Start Chatting
@@ -32,7 +32,7 @@ const Home = () => {
         <Link
           to="/about"
           className="flex gap-4 items-center justify-center border-green-950 active:bg-green-950 hover:bg-green-900 hover:border-green-900 transition border-2 px-8 rounded-md py-4 font-semibold"
-          style={{ flex: "1 0 100%", textAlign: "center" }}
+          style={{ flex: '1 0 100%', textAlign: 'center' }}
         >
           About Us
         </Link>
@@ -44,7 +44,7 @@ const Home = () => {
         ask specific questions, ChatPDF makes it simple and efficient.
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

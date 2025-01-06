@@ -3,7 +3,7 @@ const Chat = () => {
     <div className="chat">
       <h1>chat</h1>
     </div>
-  );
-};
+  )
+}
 
-export default Chat;
+export default Chat

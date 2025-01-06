@@ -1,24 +1,24 @@
-import Circle from "./Circle";
-import Home from "./components/Home";
+import Circle from './Circle'
+import Home from './components/Home'
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
-} from "react-router-dom";
-import Upload from "./components/Upload";
-import Chat from "./components/Chat";
-import NavBar from "./components/NavBar";
-import About from "./components/About";
-import Contact from "./components/Contact";
+} from 'react-router-dom'
+import Upload from './components/Upload'
+import Chat from './components/Chat'
+import NavBar from './components/NavBar'
+import About from './components/About'
+import Contact from './components/Contact'
 
 function App() {
-  const location = useLocation();
+  const location = useLocation()
 
   return (
     <div className="min-h-screen bg-gradient-to-t to-black from-green-950 text-white">
       {/* Conditionally render the NavBar based on the current route */}
-      {location.pathname !== "/" && <NavBar />}
+      {location.pathname !== '/' && <NavBar />}
       <div className="">
         <Routes>
           <Route path="/" Component={Home} />
@@ -30,7 +30,7 @@ function App() {
         <Circle />
       </div>
     </div>
-  );
+  )
 }
 
 function AppWithRouter() {
@@ -38,7 +38,7 @@ function AppWithRouter() {
     <Router>
       <App />
     </Router>
-  );
+  )
 }
 
-export default AppWithRouter;
+export default AppWithRouter
