@@ -12,7 +12,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            {/* if lo cation is upload page, show chat. And if chat show upload*/}
+            {/* if location is upload page, show chat. And if chat show upload*/}
             {location.pathname == "/upload" ? (
               <Link to="/chat" className="navBarItem">
                 Chat

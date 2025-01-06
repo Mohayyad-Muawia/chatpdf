@@ -1,9 +1,11 @@
 const Upload = () => {
   return (
-    <div className="upload">
-      <h1>Upload</h1>
+    <div className='upload flex justify-center'>
+      <div className='px'>
+        <input type='file' className='' />
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Upload;
+export default Upload
