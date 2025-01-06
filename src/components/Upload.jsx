@@ -25,7 +25,7 @@ const Upload = () => {
       <div
         className={`border-4 p-8 rounded-md w-full max-w-4xl flex transition justify-center items-center ${
           isDragging
-            ? 'border-green-900 bg-green-100/20 '
+            ? 'border-gray-800 bg-green-100/20 '
             : 'border-gray-500/20 bg-white/10 backdrop-blur-sm'
         }`}
         style={{ minHeight: '80vh' }}
