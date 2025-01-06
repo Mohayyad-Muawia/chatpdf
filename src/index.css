@@ -4,7 +4,7 @@
 @tailwind components;
 
 .navBarItem {
-  @apply hover:text-green-200 transition hover:bg-green-900 px-5 py-2 rounded-lg;
+  @apply hover:text-green-200 transition hover:underline hover:animate-pulse hover:underline-offset-4  px-5 py-2;
 }
 
 @layer base {

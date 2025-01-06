@@ -21,11 +21,11 @@ const Upload = () => {
   }
 
   return (
-    <div className='upload flex justify-center items-center min-h-screen overflow-hidden'>
+    <div className='upload flex justify-center'>
       <div
         className={`border-4 p-8 rounded-md w-full max-w-4xl flex transition justify-center items-center ${
           isDragging
-            ? 'border-green-700 bg-green-100/20 '
+            ? 'border-green-900 bg-green-100/20 '
             : 'border-gray-500/20 bg-white/10 backdrop-blur-sm'
         }`}
         style={{ minHeight: '80vh' }}
@@ -36,7 +36,7 @@ const Upload = () => {
         <input type='file' className='hidden' id='fileUpload' />
         <label
           htmlFor='fileUpload'
-          className='bg-transparent cursor-pointer text-green-700 text-center'
+          className='bg-transparent animate-bounce cursor-pointer text-gray-400/90 text-lg text-center'
         >
           {isDragging
             ? 'Drop files here'
