@@ -7,4 +7,11 @@
   @apply hover:text-green-200 transition hover:bg-green-900 px-5 py-2 rounded-lg;
 }
 
+@layer base {
+  html,
+  body {
+    @apply h-full m-0 p-0 overflow-hidden;
+  }
+}
+
 @tailwind utilities;
