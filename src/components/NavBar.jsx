@@ -1,24 +1,24 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div className="text-white py-5">
       <nav>
-        <ul className="flex justify-center gap-20 ">
+        <ul className="flex justify-center gap-14 ">
           <li>
-            <a href="/" className="navBarItem">
+            <Link to="/" className="navBarItem">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/about" className="navBarItem">
+            <Link to="/about" className="navBarItem">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/contact" className="navBarItem">
-              Contact
-            </a>
+            <Link to="/contact" className="navBarItem">
+              Contact us
+            </Link>
           </li>
         </ul>
       </nav>

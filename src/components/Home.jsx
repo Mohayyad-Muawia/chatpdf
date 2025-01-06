@@ -15,22 +15,19 @@ const Home = () => {
       <div className="text-white flex gap-5 px-4 justify-center">
         <Link
           to="/upload"
-          className="bg-green-950 hover:bg-green-900 active:bg-green-950 transition px-12 rounded-md py-4 font-semibold"
+          className="flex gap-4 items-center bg-green-950 hover:bg-green-900 active:bg-green-950 transition px-8 rounded-md py-4 font-semibold"
         >
+          <img src="/assets/upload.svg" alt="upload" className="w-5 h-5" />
           Upload File
         </Link>
         <Link
           to="/chat"
-          className="border-green-950 active:bg-green-950  hover:bg-green-900 hover:border-green-900 transition border-2 px-12 rounded-md py-4 font-semibold"
+          className="flex gap-4 items-center border-green-950 active:bg-green-950  hover:bg-green-900 hover:border-green-900 transition border-2 px-8 rounded-md py-4 font-semibold"
         >
+          <img src="/assets/chat.svg" alt="upload" className="w-5 h-5" />
           Start Chatting
         </Link>
       </div>
-      <Link to="/team">
-        <div className="text-white active:bg-green-950 text-center font-semibold  mt-4 transition hover:bg-green-800 mx-auto rounded-md content-center max-w-lg py-5 bg-green-950 ">
-          About
-        </div>
-      </Link>
       <div className="text-green-100 text-center font-mono max-w-6xl content-center px-6 pt-10 mx-auto">
         ChatPDF is a powerful tool that allows you to easily upload
         PDF,TXT,DOCX,PPTX files and interact with their content through a chat

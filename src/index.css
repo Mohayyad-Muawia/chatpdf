@@ -4,7 +4,7 @@
 @tailwind components;
 
 .navBarItem {
-  @apply underline hover:text-green-500 transition;
+  @apply hover:text-green-500 transition;
 }
 
 @tailwind utilities;
