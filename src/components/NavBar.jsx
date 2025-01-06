@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
+  const location = useLocation();
   return (
     <div className="text-white py-5">
       <nav>
@@ -9,6 +10,18 @@ const NavBar = () => {
             <Link to="/" className="navBarItem">
               Home
             </Link>
+          </li>
+          <li>
+            {/* if lo cation is upload page, show chat. And if chat show upload*/}
+            {location.pathname == "/upload" ? (
+              <Link to="/chat" className="navBarItem">
+                Chat
+              </Link>
+            ) : (
+              <Link to="/upload" className="navBarItem">
+                Upload
+              </Link>
+            )}
           </li>
           <li>
             <Link to="/about" className="navBarItem">
