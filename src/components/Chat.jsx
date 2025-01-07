@@ -80,7 +80,7 @@ const Chat = () => {
       {error && <h2>{error}</h2>}
       <div
         className="chat-box flex flex-col items-center justify-center"
-        style={{ height: 650 }}
+        style={{ height: 550 }}
       >
         <div className="features flex justify-between gap-7 items-center w-8/12">
           <div className="flex gap-2 items-center flex-col">
