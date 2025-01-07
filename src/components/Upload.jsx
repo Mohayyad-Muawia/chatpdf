@@ -23,60 +23,42 @@ const Upload = () => {
     const files = e.dataTransfer.files
 
     if (files.length > 0) {
-      console.log(files[0])
-
-      const formData = new FormData()
-      formData.append('file', files[0])
-
-      try {
-        const response = await fetch(
-          'https://chatpdf-9g4j.onrender.com/api/v1/upload',
-          {
-            method: 'POST',
-            body: formData,
-          }
-        )
-
-        if (response.ok) {
-          console.log('File uploaded successfully')
-          setIsLoading(false)
-          navigate('/chat')
-        } else {
-          console.error('File upload failed')
-        }
-      } catch (error) {
-        console.error('Error uploading file:', error)
-      }
+      sendFileToServer(files[0])
     }
   }
 
   const handleFileSelect = async (e) => {
     const files = e.target.files
+    setIsLoading(true)
 
     if (files.length > 0) {
-      console.log(files[0])
+      sendFileToServer(files[0])
+    }
+  }
 
-      const formData = new FormData()
-      formData.append('file', files[0])
+  async function sendFileToServer(file) {
+    console.log(file)
 
-      try {
-        const response = await fetch(
-          'https://chatpdf-9g4j.onrender.com/api/v1/upload',
-          {
-            method: 'POST',
-            body: formData,
-          }
-        )
+    const formData = new FormData()
+    formData.append('file', file)
 
-        if (response.ok) {
-          console.log('File uploaded successfully')
-          navigate('/chat')
-        } else {
-          console.error('File upload failed')
+    try {
+      const response = await fetch(
+        'https://chatpdf-9g4j.onrender.com/api/v1/upload',
+        {
+          method: 'POST',
+          body: formData,
         }
-      } catch (error) {
-        console.error('Error uploading file:', error)
+      )
+
+      if (response.ok) {
+        console.log('File uploaded successfully')
+        navigate('/chat')
+      } else {
+        console.error('File upload failed')
       }
+    } catch (error) {
+      console.error('Error uploading file:', error)
     }
   }
 
