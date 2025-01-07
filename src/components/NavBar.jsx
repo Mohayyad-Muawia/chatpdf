@@ -13,7 +13,7 @@ const NavBar = () => {
           </li>
           <li>
             {/* if location is upload page, show chat. And if chat show upload*/}
-            {location.pathname == '/upload' ? (
+            {location.pathname == "/upload" ? (
               <Link to="/chat" className="navBarItem">
                 Chat
               </Link>
@@ -30,6 +30,7 @@ const NavBar = () => {
           </li>
           <li>
             <Link to="/contact" className="navBarItem">
+              Contact
               Contact
             </Link>
           </li>
