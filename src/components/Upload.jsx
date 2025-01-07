@@ -68,7 +68,7 @@ const Upload = () => {
         className={`border-4 p-8 rounded-md w-full max-w-4xl flex transition justify-center items-center ${
           isDragging
             ? 'border-gray-800 bg-green-100/20'
-            : 'border-gray-500/20 bg-white/10 backdrop-blur-sm'
+            : 'border-gray-500/20 bg-white/10 backdrop-blur-3xl'
         }`}
         style={{ minHeight: '80vh' }}
         onDragOver={handleDragOver}
@@ -80,11 +80,10 @@ const Upload = () => {
           className="hidden"
           id="fileUpload"
           onChange={handleFileSelect}
-          accept="application/pdf, image/*"
         />
         <label
           htmlFor="fileUpload"
-          className="bg-transparent cursor-pointer animate-bounce text-gray-400/90 text-lg text-center"
+          className="cursor-pointer animate-bounce text-gray-400/90 text-lg text-center"
         >
           {isDragging
             ? 'Drop files here'
@@ -97,10 +96,7 @@ const Upload = () => {
         <div
           style={{
             position: 'absolute',
-            top: '55%',
-            left: '50%',
-            transform: 'tranlate(-50%, -50%)',
-            scale: 2,
+            top: '60%',
           }}
         >
           <Loading />
