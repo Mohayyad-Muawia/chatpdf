@@ -87,7 +87,7 @@ const Chat = () => {
             <img src="/assets/feat1.svg" alt="img" />
             <h3 className="font-bold">Clear and precise</h3>
             <p className=" text-center opacity-50">
-              Pariatur sint laborum cillum aute consectetur irure.
+              Get clear and precise answers to your questions.
             </p>
           </div>
 
@@ -95,7 +95,7 @@ const Chat = () => {
             <img src="/assets/feat2.svg" alt="img" />
             <h3 className="font-bold">Personalized answers</h3>
             <p className="text-center opacity-50">
-              Pariatur sint laborum cillum aute consectetur irure.
+              Receive answers tailored to your specific needs.
             </p>
           </div>
 
@@ -103,7 +103,7 @@ const Chat = () => {
             <img src="/assets/feat3.svg" alt="img" />
             <h3 className="font-bold">Increased efficiency</h3>
             <p className="text-center opacity-50">
-              Pariatur sint laborum cillum aute consectetur irure.
+              Improve your productivity with quick and efficient responses.
             </p>
           </div>
         </div>
