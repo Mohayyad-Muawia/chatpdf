@@ -25,6 +25,7 @@ const Chat = () => {
 
     // hide features section
     document.querySelector(".features").style.display = "none";
+    document.querySelector(".mssgs-box").style.height = "100%";
 
     try {
       const response = await fetch(URL, {
