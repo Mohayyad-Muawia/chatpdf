@@ -3,6 +3,15 @@
 @tailwind base;
 @tailwind components;
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::selection {
+  background-color: #087c4c;
+  color: #000;
+}
+
 .navBarItem {
   @apply hover:text-green-200 transition hover:underline hover:animate-pulse hover:underline-offset-4  px-5 py-2;
 }

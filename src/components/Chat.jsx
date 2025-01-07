@@ -74,9 +74,10 @@ const Chat = () => {
 
   const chatScroll = () => {
     const container = document.querySelector('.mssgs-box')
-    container.scrollTop = container.scrollHeight
+    if (container) {
+      container.scrollTop = container.scrollHeight
+    }
   }
-
   return (
     <div className="chat flex flex-col px-40 ">
       {error && <h2>{error}</h2>}
