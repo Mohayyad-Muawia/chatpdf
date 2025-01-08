@@ -8,6 +8,7 @@ const Chat = () => {
   const [replay, setReplay] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [msgSent, setMsgSent] = useState(false)
 
   // API logic
   const URL = 'https://chatpdf-9g4j.onrender.com/api/v1/send'
@@ -36,6 +37,7 @@ const Chat = () => {
       })
 
       if (!response.ok) {
+        console.error(await response.json())
         throw new Error('Failed to fetch response. Please try again.')
       }
 
@@ -56,6 +58,7 @@ const Chat = () => {
     msg.classList.add('msg')
     msg.textContent = content
     mssgsBox.appendChild(msg)
+    setMsgSent(true)
   }
 
   const appendRep = (content) => {
@@ -132,7 +135,11 @@ const Chat = () => {
           type="text"
           className="outline-none rounded-lg py-3 px-5 w-full"
           required
-          placeholder="Example : “Explain quantum computing in simple terms”"
+          placeholder={
+            !msgSent
+              ? 'Example : “Explain quantum computing in simple terms”'
+              : ''
+          }
           value={mssg}
           onChange={handle_change}
         />
