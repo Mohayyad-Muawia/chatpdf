@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './chat.css'
 import Loading from './Loading'
 import { marked } from 'marked'
+import { useLocation } from 'react-router-dom'
 
 const Chat = () => {
   const [mssg, setMssg] = useState('')
@@ -9,6 +10,10 @@ const Chat = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [msgSent, setMsgSent] = useState(false)
+  const location = useLocation()
+  const noDoc = location.state ? true : false
+
+  // console.log(noDoc, location.state)
 
   // API logic
   const URL = 'https://chatpdf-9g4j.onrender.com/api/v1/send'
@@ -33,7 +38,9 @@ const Chat = () => {
       const response = await fetch(URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: mssg }),
+        body: noDoc
+          ? JSON.stringify({ question: mssg })
+          : JSON.stringify({ question: mssg, noDoc: true }),
       })
 
       if (!response.ok) {
