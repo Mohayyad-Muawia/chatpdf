@@ -2,6 +2,31 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Loading from './Loading'
 
+async function sendFileToServer(file) {
+  console.log(file)
+
+  const formData = new FormData()
+  formData.append('file', file)
+
+  try {
+    const response = await fetch(
+      'https://chatpdf-9g4j.onrender.com/api/v1/upload',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
+
+    if (response.ok) {
+      console.log('File uploaded successfully')
+    } else {
+      console.error('File upload failed')
+    }
+  } catch (error) {
+    console.error('Error uploading file:', error)
+  }
+}
+
 const Upload = () => {
   const [isDragging, setIsDragging] = useState(false)
   const [loading, setIsLoading] = useState(false)
@@ -23,7 +48,8 @@ const Upload = () => {
     const files = e.dataTransfer.files
 
     if (files.length > 0) {
-      sendFileToServer(files[0])
+      await sendFileToServer(files[0])
+      navigate('/chat')
     }
   }
 
@@ -32,33 +58,8 @@ const Upload = () => {
     setIsLoading(true)
 
     if (files.length > 0) {
-      sendFileToServer(files[0])
-    }
-  }
-
-  async function sendFileToServer(file) {
-    console.log(file)
-
-    const formData = new FormData()
-    formData.append('file', file)
-
-    try {
-      const response = await fetch(
-        'https://chatpdf-9g4j.onrender.com/api/v1/upload',
-        {
-          method: 'POST',
-          body: formData,
-        }
-      )
-
-      if (response.ok) {
-        console.log('File uploaded successfully')
-        navigate('/chat')
-      } else {
-        console.error('File upload failed')
-      }
-    } catch (error) {
-      console.error('Error uploading file:', error)
+      await sendFileToServer(files[0])
+      navigate('/chat')
     }
   }
 
