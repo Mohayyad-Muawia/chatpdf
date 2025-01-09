@@ -1,0 +1,38 @@
+.mssgs-box {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  scrollbar-width: none;
+}
+
+.mssgs-box::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.mssgs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+
+  .msg {
+    padding: 10px 20px;
+    background: #087c4c;
+    border-radius: 8px 8px 0 8px;
+    width: fit-content;
+    align-self: flex-end;
+  }
+  .rep {
+    @apply rounded-md;
+    padding: 10px 20px;
+    border: 2px solid #ffffff4d;
+    border-radius: 8px 8px 8px 0;
+    width: fit-content;
+    align-self: flex-start;
+  }
+}

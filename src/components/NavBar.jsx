@@ -1,24 +1,34 @@
-import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const NavBar = () => {
+  const location = useLocation()
   return (
-    <div className='text-white py-5'>
+    <div className="text-white py-5">
       <nav>
-        <ul className='flex justify-center gap-20 '>
+        <ul className="flex justify-center gap-14 ">
           <li>
-            <a href='/' className='navBarItem'>
+            <Link to="/" className="navBarItem">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href='/about' className='navBarItem'>
+            {/* if location is upload page, show chat. And if chat show upload*/}
+            {location.pathname == "/upload" ? (
+              <Link to="/chat" className="navBarItem">
+                Chat
+              </Link>
+            ) : (
+              <Link to="/upload" className="navBarItem">
+                Upload
+              </Link>
+            )}
+          </li>
+          <li>
+            <Link to="/about" className="navBarItem">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href='/contact' className='navBarItem'>
-              Contact
-            </a>
           </li>
         </ul>
       </nav>

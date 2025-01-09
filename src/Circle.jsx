@@ -6,10 +6,10 @@ const Circle = () => {
         viewBox="0 0 1920 489"
         preserveAspectRatio="none"
         style={{
-          width: "100vw",
-          height: "100vh",
-          display: "block",
-          position: "absolute",
+          width: '100vw',
+          height: '100vh',
+          display: 'block',
+          position: 'absolute',
           top: 0,
           left: 0,
           zIndex: -1,
@@ -37,7 +37,7 @@ const Circle = () => {
         </defs>
       </svg>
     </div>
-  );
-};
+  )
+}
 
-export default Circle;
+export default Circle
