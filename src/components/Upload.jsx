@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Loading from './Loading'
+import { DocumentProvidedContext } from '../context/UploadedContext'
 
 async function sendFileToServer(file) {
   console.log(file)
@@ -31,6 +32,7 @@ const Upload = () => {
   const [isDragging, setIsDragging] = useState(false)
   const [loading, setIsLoading] = useState(false)
   const navigate = useNavigate()
+  const { noDoc, setNoDoc } = useContext(DocumentProvidedContext)
 
   const handleDragOver = (e) => {
     e.preventDefault()
@@ -49,6 +51,7 @@ const Upload = () => {
 
     if (files.length > 0) {
       await sendFileToServer(files[0])
+      setNoDoc(false)
       navigate('/chat')
     }
   }
@@ -59,6 +62,7 @@ const Upload = () => {
 
     if (files.length > 0) {
       await sendFileToServer(files[0])
+      setNoDoc(false)
       navigate('/chat')
     }
   }

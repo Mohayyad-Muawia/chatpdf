@@ -1,17 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './chat.css'
 import Loading from './Loading'
 import { marked } from 'marked'
-import { useLocation } from 'react-router-dom'
+import { DocumentProvidedContext } from '../context/UploadedContext'
 
 const Chat = () => {
+  const { noDoc, setNoDoc } = useContext(DocumentProvidedContext)
   const [mssg, setMssg] = useState('')
   const [replay, setReplay] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [msgSent, setMsgSent] = useState(false)
-  const location = useLocation()
-  const noDoc = location.state ? true : false
 
   // console.log(noDoc, location.state)
 
@@ -38,13 +37,15 @@ const Chat = () => {
       const response = await fetch(URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: noDoc
-          ? JSON.stringify({ question: mssg })
-          : JSON.stringify({ question: mssg, noDoc: true }),
+        body: JSON.stringify({ question: mssg, noDoc }),
       })
 
       if (!response.ok) {
-        console.error(await response.json())
+        const { error } = await response.json()
+        console.error(error)
+        if (error.includes('length as the number of dimensions'))
+          throw new Error('Failed to respond. Try reuploading the document.')
+
         throw new Error('Failed to fetch response. Please try again.')
       }
 
