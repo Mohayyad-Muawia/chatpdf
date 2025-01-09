@@ -22,9 +22,9 @@ function App() {
       <div className="">
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="/upload" Component={Upload} />
           <Route path="/chat" Component={Chat} />
           <Route path="/about" Component={About} />
+          <Route path="/upload" Component={Upload} />
           <Route path="/contact" Component={Contact} />
         </Routes>
         <Circle />

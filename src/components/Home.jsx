@@ -22,6 +22,7 @@ const Home = () => {
           Upload File
         </Link>
         <Link
+          state={{ noDoc: true }}
           to="/chat"
           className="flex gap-4 hover:border-double hover:border-2  items-center justify-center active:ring active:ring-offset-1 border-green-950 active:bg-green-950 hover:bg-green-900 hover:text-green-200 hover:border-green-300 transition border-2 px-8 rounded-md py-4 font-semibold"
           style={{ flex: '1 0 calc(33.33% - 1rem)', textAlign: 'center' }}
