@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
 @tailwind base;
 @tailwind components;
 
+@font-face {
+  font-family: "Baloo";
+  src: url('/assets/fonts/Baloo.ttf');
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
+  font-family: "Baloo", sans-serif;
 }
 
 *::selection {
