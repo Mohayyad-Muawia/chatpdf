@@ -8,7 +8,7 @@ const Home = () => {
           Welcome to
         </h2>
         <h1 className="text-white text-center text-8xl font-bold  mb-8">
-          CHAT PDF
+          ChatPDF
         </h1>
       </div>
 
