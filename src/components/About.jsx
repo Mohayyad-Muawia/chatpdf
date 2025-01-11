@@ -28,41 +28,119 @@ const About = () => {
         </div>
       </div>
 
-      <div className="team mt-20 px-16">
+      <div className="team mt-20 px-40">
         <h1 className="font-bold text-4xl mb-5 text-center">The Team</h1>
 
-        <div className="members mt-10 flex gap-10 flex-wrap">
-          <div className="card flex-1 min-w-60">
-            <img className="max-w-full" src="/assets/t1.jpg" alt="" />
-            <h3 className="font-bold">Hassan Abdelwahid</h3>
+        <div className="members py-12 flex gap-12 flex-wrap">
+          <div className="card flex-1 min-w-60 rounded-2xl">
+            <img
+              className="max-w-full rounded-2xl"
+              src="/assets/t1.jpg"
+              alt=""
+            />
+            <h3 className="font-bold text-2xl my-3">Hassan Abdelwahid</h3>
             <p>
               Student at Alneelen University, majoring in ALX Software
               Engineering within the Computer Science Department. Alongside my
               technical studies, I'm also skilled in logo design, blending
               creativity with software expertise.
             </p>
+            <div className="links pt-6 flex justify-evenly -0">
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/x.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/linkedin.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/github.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+            </div>
           </div>
 
           <div className="card flex-1 min-w-60">
-            <img className="max-w-full" src="/assets/t1.jpg" alt="" />
-            <h3 className="font-bold">Hassan Abdelwahid</h3>
+            <img
+              className="max-w-full rounded-2xl"
+              src="/assets/t2.jpg"
+              alt=""
+            />
+            <h3 className="font-bold text-2xl my-3">Omer Someone</h3>
             <p>
-              Student at Alneelen University, majoring in ALX Software
-              Engineering within the Computer Science Department. Alongside my
-              technical studies, I'm also skilled in logo design, blending
-              creativity with software expertise.
+              The bro who is dealing with college, an internship and ALX at the
+              same time. What can I say? I guess I'm Superman.
             </p>
+            <div className="links pt-6 flex justify-evenly -0">
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/x.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/linkedin.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/github.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+            </div>
           </div>
 
           <div className="card flex-1 min-w-60">
-            <img className="max-w-full" src="/assets/t1.jpg" alt="" />
-            <h3 className="font-bold">Hassan Abdelwahid</h3>
+            <img
+              className="max-w-full rounded-2xl"
+              src="/assets/t3.jpg"
+              alt=""
+            />
+            <h3 className="font-bold text-2xl my-3">Mohayyad Muawia</h3>
             <p>
-              Student at Alneelen University, majoring in ALX Software
-              Engineering within the Computer Science Department. Alongside my
-              technical studies, I'm also skilled in logo design, blending
-              creativity with software expertise.
+              A passionate web developer who loves crafting websites. When I’m
+              not coding, you’ll find me exploring new techs, tackling
+              challenges, and bringing innovative projects to life :)
             </p>
+            <div className="links pt-6 flex justify-evenly -0">
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/x.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/linkedin.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+              <a href="http://" target="_blank">
+                <img
+                  src="/assets/github.svg"
+                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                  style={{ padding: 10 }}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
