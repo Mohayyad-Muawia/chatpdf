@@ -28,8 +28,43 @@ const About = () => {
         </div>
       </div>
 
-      <div className="team mt-20">
+      <div className="team mt-20 px-16">
         <h1 className="font-bold text-4xl mb-5 text-center">The Team</h1>
+
+        <div className="members mt-10 flex gap-10 flex-wrap">
+          <div className="card flex-1 min-w-60">
+            <img className="max-w-full" src="/assets/t1.jpg" alt="" />
+            <h3 className="font-bold">Hassan Abdelwahid</h3>
+            <p>
+              Student at Alneelen University, majoring in ALX Software
+              Engineering within the Computer Science Department. Alongside my
+              technical studies, I'm also skilled in logo design, blending
+              creativity with software expertise.
+            </p>
+          </div>
+
+          <div className="card flex-1 min-w-60">
+            <img className="max-w-full" src="/assets/t1.jpg" alt="" />
+            <h3 className="font-bold">Hassan Abdelwahid</h3>
+            <p>
+              Student at Alneelen University, majoring in ALX Software
+              Engineering within the Computer Science Department. Alongside my
+              technical studies, I'm also skilled in logo design, blending
+              creativity with software expertise.
+            </p>
+          </div>
+
+          <div className="card flex-1 min-w-60">
+            <img className="max-w-full" src="/assets/t1.jpg" alt="" />
+            <h3 className="font-bold">Hassan Abdelwahid</h3>
+            <p>
+              Student at Alneelen University, majoring in ALX Software
+              Engineering within the Computer Science Department. Alongside my
+              technical studies, I'm also skilled in logo design, blending
+              creativity with software expertise.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )

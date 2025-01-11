@@ -92,9 +92,11 @@ const Chat = () => {
   return (
     <div className="chat flex flex-col px-40 ">
       {error && (
-        <h2 className="text-red-600 text-center border-2 border-red-600 rounded-lg mx-auto px-8 animate-pulse ">
-          {error}
-        </h2>
+        <div className="absolute text-center w-full left-0 top-20">
+          <h2 className="text-red-600 w-fit mx-auto border-2 border-red-600 rounded-lg px-8 animate-pulse ">
+            {error}
+          </h2>
+        </div>
       )}
       <div
         className="chat-box flex flex-col items-center justify-center"
