@@ -43,10 +43,9 @@ const Home = () => {
         interface. Whether you need to extract information, summarize text, or
         ask specific questions, ChatPDF makes it simple and efficient.
       </div>
-      <footer className="text-center  mt-10"></footer>
-      <p className="text-green-200 absolute left-8 bottom-5 font-bold text-sm ">
-        &copy; {new Date().getFullYear()} ChatPDF. All rights reserved.
-      </p>
+      <footer className="text-green-200 w-full text-center mt-10 font-bold text-sm">
+        <p>&copy; {new Date().getFullYear()} ChatPDF. All rights reserved.</p>
+      </footer>
     </div>
   )
 }

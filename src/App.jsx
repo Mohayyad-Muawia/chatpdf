@@ -18,18 +18,16 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-gradient-to-t to-black from-green-950 text-white">
+    <div className="min-h-screen ">
       {/* Conditionally render the NavBar based on the current route */}
       {location.pathname !== '/' && <NavBar />}
       <div>
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/chat" Component={Chat} />
-          <Route path="/about" Component={About} />
           <Route path="/upload" Component={Upload} />
-          <Route path="/contact" Component={Contact} />
+          <Route path="/about" Component={About} />
         </Routes>
-        <Circle />
       </div>
     </div>
   )
