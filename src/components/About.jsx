@@ -100,21 +100,24 @@ const About = () => {
               🔗💡 full-stack dev with an insatiable hunger for tech and AI
             </p>
             <div className="links pt-6 flex justify-evenly">
-              <a href="http://" target="_blank">
+              <a href="https://x.com/Omarvx211" target="_blank">
                 <img
                   src="/assets/x.svg"
                   className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
                   style={{ padding: 10 }}
                 />
               </a>
-              <a href="http://" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/omar-abdulrahim-1o/"
+                target="_blank"
+              >
                 <img
                   src="/assets/linkedin.svg"
                   className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
                   style={{ padding: 10 }}
                 />
               </a>
-              <a href="http://" target="_blank">
+              <a href="https://github.com/oovaa" target="_blank">
                 <img
                   src="/assets/github.svg"
                   className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
