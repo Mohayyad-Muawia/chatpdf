@@ -90,13 +90,15 @@ const About = () => {
           <div className="card flex-1 min-w-60">
             <img
               className="max-w-full rounded-2xl"
-              src="/assets/t2.jpg"
+              src="/assets/mna.jpg"
               alt=""
             />
-            <h3 className="font-bold text-2xl my-3">Omer Someone</h3>
+            <h3 className="font-bold text-2xl my-3">Omar Abdulrahim</h3>
             <p>
-              The bro who is dealing with college, an internship and ALX at the
-              same time. What can I say? I guess I'm Superman.
+              ALX SE alumnus, ALX SE Africa student. 🌟 Mastermind behind the
+              creation of intricate structures, chains, and bot functionalities.
+              🔗💡 full-stack dev with an insatiable hunger for tech and
+              AI
             </p>
             <div className="links pt-6 flex justify-evenly -0">
               <a href="http://" target="_blank">
