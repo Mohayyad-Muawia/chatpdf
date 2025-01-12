@@ -23,7 +23,7 @@
 @layer base {
   html,
   body {
-    @apply h-full m-0 p-0 overflow-hidden;
+    @apply h-full m-0 p-0 overflow-x-hidden;
   }
 }
 
