@@ -1,4 +1,14 @@
+import { useState } from 'react'
+
 const About = () => {
+  const [copied, setCopied] = useState(false)
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText('chatpdf.feedback@gmail.com')
+    setCopied(true)
+    setTimeout(() => setCopied(false), 3000)
+  }
+
   return (
     <div className="about" style={{ height: 'calc(100vh - 64px)' }}>
       <div className="flex h-full items-center">
@@ -120,12 +130,18 @@ const About = () => {
         <p className="text-lg opacity-50">Have questions or feedback?</p>
         <p className="text-xl font-baloo font-bold">
           Contact us at{' '}
-          <a
-            href="mailto:chatpdf.feedback@gmail.com"
-            className="text-blue-500 underline hover:text-blue-800 transition-colors"
+          <span
+            onClick={copyToClipboard}
+            className={`cursor-pointer transition-colors duration-300 ease-in-out ${
+              copied
+                ? 'text-green-600'
+                : 'text-blue-600 underline hover:text-blue-800'
+            }`}
           >
-            chatpdf.feedback@gmail.com
-          </a>
+            {copied
+              ? 'Email copied to clipboard!'
+              : 'chatpdf.feedback@gmail.com'}
+          </span>
         </p>
       </div>
     </div>
