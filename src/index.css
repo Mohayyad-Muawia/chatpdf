@@ -20,17 +20,17 @@
   @apply hover:text-green-200 transition hover:underline hover:animate-pulse hover:underline-offset-4  px-5 py-2;
 }
 
-.links{
+.links {
   opacity: 0;
-  transition: .3s;
+  transition: 0.3s;
 }
-.members:hover .card{
-  filter: grayscale(.6);
-  transition: .3s;
+.members:hover .card {
+  filter: grayscale(0.6);
+  transition: 0.3s;
 }
 .card:hover {
   filter: grayscale(0) !important;
-  .links{
+  .links {
     opacity: 1;
   }
 }
