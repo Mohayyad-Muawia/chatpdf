@@ -95,9 +95,10 @@ const About = () => {
             />
             <h3 className="font-bold text-2xl my-3">Omar Abdulrahim</h3>
             <p>
-              ALX SE alumnus, ALX SE Africa student. 🌟 Mastermind behind the
-              creation of intricate structures, chains, and bot functionalities.
-              🔗💡 full-stack dev with an insatiable hunger for tech and AI
+              ALX SE alumnus, Information Systems student. ⭐ Mastermind behind
+              the creation of intricate structures, chains, and bot
+              functionalities. Full-stack dev with an insatiable hunger for
+              tech and AI
             </p>
             <div className="links pt-6 flex justify-evenly">
               <a href="https://x.com/Omarvx211" target="_blank">
