@@ -25,7 +25,7 @@ const About = () => {
           <h1 className="font-bold text-4xl">How it works</h1>
           <ol className="mt-5 opacity-50 flex flex-col gap-3">
             <li>
-              1. Choose the document you want ChatPDF to help you with, it must
+              1. Choose the document you want ChatPDF to help you with. It must
               be PDF, TXT, DOCX, or PPTX.
             </li>
             <li>2. Upload your document to ChatPDF from the upload page.</li>
@@ -49,122 +49,84 @@ const About = () => {
         <h1 className="font-bold text-4xl mb-5 text-center">The Team</h1>
 
         <div className="members py-12 flex gap-12 flex-wrap">
-          <div className="card flex-1 min-w-[250px] p-5 rounded-2xl shadow-lg">
-            <img
-              className="w-full h-80 object-cover rounded-2xl"
-              src="/assets/t1.jpg"
-              alt=""
-            />
-            <h3 className="font-bold text-2xl my-3">Hassan Abdelwahid</h3>
-            <p>
-              Student at Alneelen University, majoring in ALX Software
-              Engineering within the Computer Science Department. Alongside my
-              technical studies, I'm also skilled in logo design, blending
-              creativity with software expertise.
-            </p>
-            <div className="links pt-6 flex justify-evenly">
-              <a href="http://" target="_blank">
-                <img
-                  src="/assets/x.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
-              <a href="http://" target="_blank">
-                <img
-                  src="/assets/linkedin.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
-              <a href="http://" target="_blank">
-                <img
-                  src="/assets/github.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
+          {[
+            {
+              name: 'Hassan Abdelwahid',
+              image: '/assets/t1.jpg',
+              description:
+                "Student at Alneelen University, majoring in ALX Software Engineering within the Computer Science Department. Alongside my technical studies, I'm also skilled in logo design, blending creativity with software expertise.",
+              links: [
+                { href: 'http://', icon: '/assets/x.svg' },
+                { href: 'http://', icon: '/assets/linkedin.svg' },
+                { href: 'http://', icon: '/assets/github.svg' },
+              ],
+            },
+            {
+              name: 'Omar Abdulrahim',
+              image: '/assets/mna.jpg',
+              description:
+                'ALX SE alumnus, Information Systems student. ⭐ Mastermind behind the creation of intricate structures, chains, and bot functionalities. Full-stack dev with an insatiable hunger for tech and AI.',
+              links: [
+                { href: 'https://x.com/Omarvx211', icon: '/assets/x.svg' },
+                {
+                  href: 'https://www.linkedin.com/in/omar-abdulrahim-1o/',
+                  icon: '/assets/linkedin.svg',
+                },
+                {
+                  href: 'https://github.com/oovaa',
+                  icon: '/assets/github.svg',
+                },
+              ],
+            },
+            {
+              name: 'Mohayyad Muawia',
+              image: '/assets/t3.jpg',
+              description:
+                'A passionate web developer who loves crafting websites. When I’m not coding, you’ll find me exploring new techs, tackling challenges, and bringing innovative projects to life :)',
+              links: [
+                { href: 'http://', icon: '/assets/x.svg' },
+                { href: 'http://', icon: '/assets/linkedin.svg' },
+                { href: 'http://', icon: '/assets/github.svg' },
+              ],
+            },
+          ].map((member, index) => (
+            <div
+              key={index}
+              className="card flex-1 min-w-[250px] p-5 rounded-2xl shadow-lg"
+            >
+              <img
+                className="w-full h-80 object-cover rounded-2xl"
+                src={member.image}
+                alt={member.name}
+              />
+              <h3 className="font-bold text-2xl my-3">{member.name}</h3>
+              <p>{member.description}</p>
+              <div className="links pt-6 flex justify-evenly">
+                {member.links.map((link, linkIndex) => (
+                  <a key={linkIndex} href={link.href} target="_blank">
+                    <img
+                      src={link.icon}
+                      className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
+                      style={{ padding: 10 }}
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-
-          <div className="card flex-1 min-w-[250px] p-5 rounded-2xl shadow-lg">
-            <img
-              className="w-full h-80 object-cover rounded-2xl"
-              src="/assets/mna.jpg"
-              alt=""
-            />
-            <h3 className="font-bold text-2xl my-3">Omar Abdulrahim</h3>
-            <p>
-              ALX SE alumnus, Information Systems student. ⭐ Mastermind behind
-              the creation of intricate structures, chains, and bot
-              functionalities. Full-stack dev with an insatiable hunger for
-              tech and AI
-            </p>
-            <div className="links pt-6 flex justify-evenly">
-              <a href="https://x.com/Omarvx211" target="_blank">
-                <img
-                  src="/assets/x.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/omar-abdulrahim-1o/"
-                target="_blank"
-              >
-                <img
-                  src="/assets/linkedin.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
-              <a href="https://github.com/oovaa" target="_blank">
-                <img
-                  src="/assets/github.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
-            </div>
-          </div>
-
-          <div className="card flex-1 min-w-[250px] p-5 rounded-2xl shadow-lg">
-            <img
-              className="w-full h-80 object-cover rounded-2xl"
-              src="/assets/t3.jpg"
-              alt=""
-            />
-            <h3 className="font-bold text-2xl my-3">Mohayyad Muawia</h3>
-            <p>
-              A passionate web developer who loves crafting websites. When I’m
-              not coding, you’ll find me exploring new techs, tackling
-              challenges, and bringing innovative projects to life :)
-            </p>
-            <div className="links pt-6 flex justify-evenly">
-              <a href="http://" target="_blank">
-                <img
-                  src="/assets/x.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
-              <a href="http://" target="_blank">
-                <img
-                  src="/assets/linkedin.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
-              <a href="http://" target="_blank">
-                <img
-                  src="/assets/github.svg"
-                  className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                  style={{ padding: 10 }}
-                />
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
+      </div>
+      <div className="text-center mt-10">
+        <p className="text-lg opacity-50">Have questions or feedback?</p>
+        <p className="text-xl font-baloo font-bold">
+          Contact us at{' '}
+          <a
+            href="mailto:chatpdf.feedback@gmail.com"
+            className="text-blue-500 underline hover:text-blue-800 transition-colors"
+          >
+            chatpdf.feedback@gmail.com
+          </a>
+        </p>
       </div>
     </div>
   )
