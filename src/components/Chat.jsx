@@ -80,6 +80,7 @@ const Chat = () => {
 
   //scroll
   useEffect(() => {
+    fetch('https://chatpdf-9g4j.onrender.com/z')
     chatScroll()
   }, [loading, replay])
 

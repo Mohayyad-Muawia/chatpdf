@@ -5,13 +5,11 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom'
-import Circle from './Circle'
 import Home from './components/Home'
 import Upload from './components/Upload'
 import Chat from './components/Chat'
 import NavBar from './components/NavBar'
 import About from './components/About'
-import Contact from './components/Contact'
 import { DocumentProvidedProvider } from './context/UploadedContext' // Adjust the import path accordingly
 
 function App() {

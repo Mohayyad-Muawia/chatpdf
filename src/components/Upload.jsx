@@ -59,11 +59,16 @@ const Upload = () => {
   const handleFileSelect = async (e) => {
     const files = e.target.files
     setIsLoading(true)
-
+  
     if (files.length > 0) {
-      await sendFileToServer(files[0])
-      setNoDoc(false)
-      navigate('/chat')
+      try {
+        await sendFileToServer(files[0])
+        setNoDoc(false)
+        navigate('/chat')
+      } catch (error) {
+        console.error('Error uploading file:', error)
+        setIsLoading(false)
+      }
     }
   }
 
