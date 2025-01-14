@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <div className="text-white py-5">
       <nav>
-        <ul className="flex justify-center gap-14 ">
+        <ul className="flex justify-center md:gap-10 lg:gap-14">
           <li>
             <Link to="/" className="navBarItem">
               Home
