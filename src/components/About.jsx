@@ -127,8 +127,8 @@ const About = () => {
         </div>
       </div>
       <div className="text-center mt-10">
-        <p className="text-lg opacity-50">Have questions or feedback?</p>
-        <p className="text-xl font-baloo font-bold">
+        <p className="text-md opacity-50">Have questions or feedback?</p>
+        <p className="text-lg font-baloo font-bold">
           Contact us at{' '}
           <span
             onClick={copyToClipboard}
