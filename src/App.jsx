@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,9 +15,18 @@ import { DocumentProvidedProvider } from './context/UploadedContext' // Adjust t
 function App() {
   const location = useLocation()
 
+  useEffect(() => {
+    fetch('https://chatpdf-9g4j.onrender.com/z', {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message: 'waking the server to reduce cold start' }),
+    })
+  }, [])
+
   return (
     <div className="min-h-screen ">
-      {/* Conditionally render the NavBar based on the current route */}
       {location.pathname !== '/' && <NavBar />}
       <div>
         <Routes>
