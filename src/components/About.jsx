@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import MemberCard from './MemberCard'
 
 const About = () => {
   const [copied, setCopied] = useState(false)
@@ -8,6 +9,48 @@ const About = () => {
     setCopied(true)
     setTimeout(() => setCopied(false), 3000)
   }
+
+  const teamMembers = [
+    {
+      name: 'Hassan Abdelwahid',
+      image: '/assets/t1.jpg',
+      description:
+        "Student at Alneelen University, majoring in ALX Software Engineering within the Computer Science Department. Alongside my technical studies, I'm also skilled in logo design, blending creativity with software expertise.",
+      links: [
+        { href: 'http://', icon: '/assets/x.svg' },
+        { href: 'http://', icon: '/assets/linkedin.svg' },
+        { href: 'http://', icon: '/assets/github.svg' },
+      ],
+    },
+    {
+      name: 'Omar Abdulrahim',
+      image: '/assets/mna.jpg',
+      description:
+        'ALX SE alumnus, Information Systems student. ⭐ Mastermind behind the creation of intricate structures, chains, and bot functionalities. Full-stack dev with an insatiable hunger for tech and AI.',
+      links: [
+        { href: 'https://x.com/Omarvx211', icon: '/assets/x.svg' },
+        {
+          href: 'https://www.linkedin.com/in/omar-abdulrahim-1o/',
+          icon: '/assets/linkedin.svg',
+        },
+        {
+          href: 'https://github.com/oovaa',
+          icon: '/assets/github.svg',
+        },
+      ],
+    },
+    {
+      name: 'Mohayyad Muawia',
+      image: '/assets/t3.jpg',
+      description:
+        'A passionate web developer who loves crafting websites. When I’m not coding, you’ll find me exploring new techs, tackling challenges, and bringing innovative projects to life :)',
+      links: [
+        { href: 'http://', icon: '/assets/x.svg' },
+        { href: 'http://', icon: '/assets/linkedin.svg' },
+        { href: 'http://', icon: '/assets/github.svg' },
+      ],
+    },
+  ]
 
   return (
     <div className="about" style={{ height: 'calc(100vh - 64px)' }}>
@@ -59,70 +102,14 @@ const About = () => {
         <h1 className="font-bold text-4xl mb-5 text-center">The Team</h1>
 
         <div className="members py-12 flex gap-12 flex-wrap">
-          {[
-            {
-              name: 'Hassan Abdelwahid',
-              image: '/assets/t1.jpg',
-              description:
-                "Student at Alneelen University, majoring in ALX Software Engineering within the Computer Science Department. Alongside my technical studies, I'm also skilled in logo design, blending creativity with software expertise.",
-              links: [
-                { href: 'http://', icon: '/assets/x.svg' },
-                { href: 'http://', icon: '/assets/linkedin.svg' },
-                { href: 'http://', icon: '/assets/github.svg' },
-              ],
-            },
-            {
-              name: 'Omar Abdulrahim',
-              image: '/assets/mna.jpg',
-              description:
-                'ALX SE alumnus, Information Systems student. ⭐ Mastermind behind the creation of intricate structures, chains, and bot functionalities. Full-stack dev with an insatiable hunger for tech and AI.',
-              links: [
-                { href: 'https://x.com/Omarvx211', icon: '/assets/x.svg' },
-                {
-                  href: 'https://www.linkedin.com/in/omar-abdulrahim-1o/',
-                  icon: '/assets/linkedin.svg',
-                },
-                {
-                  href: 'https://github.com/oovaa',
-                  icon: '/assets/github.svg',
-                },
-              ],
-            },
-            {
-              name: 'Mohayyad Muawia',
-              image: '/assets/t3.jpg',
-              description:
-                'A passionate web developer who loves crafting websites. When I’m not coding, you’ll find me exploring new techs, tackling challenges, and bringing innovative projects to life :)',
-              links: [
-                { href: 'http://', icon: '/assets/x.svg' },
-                { href: 'http://', icon: '/assets/linkedin.svg' },
-                { href: 'http://', icon: '/assets/github.svg' },
-              ],
-            },
-          ].map((member, index) => (
-            <div
+          {teamMembers.map((member, index) => (
+            <MemberCard
               key={index}
-              className="card flex-1 min-w-[250px] p-5 rounded-2xl shadow-lg"
-            >
-              <img
-                className="w-full h-80 object-cover rounded-2xl"
-                src={member.image}
-                alt={member.name}
-              />
-              <h3 className="font-bold text-2xl my-3">{member.name}</h3>
-              <p>{member.description}</p>
-              <div className="links pt-6 flex justify-evenly">
-                {member.links.map((link, linkIndex) => (
-                  <a key={linkIndex} href={link.href} target="_blank">
-                    <img
-                      src={link.icon}
-                      className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
-                      style={{ padding: 10 }}
-                    />
-                  </a>
-                ))}
-              </div>
-            </div>
+              name={member.name}
+              image={member.image}
+              description={member.description}
+              links={member.links}
+            />
           ))}
         </div>
       </div>
