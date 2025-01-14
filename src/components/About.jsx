@@ -166,6 +166,16 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <footer
+        className=" p-6 text-xl text-center"
+        style={{ background: '#0A1307' }}
+      >
+        <b>Contact us: </b> <br />
+        <a className="font-bold" href="mailto:chatpdf.feedbach@gmail.com">
+          chatpdf.feedbach@gmail.com
+        </a>
+      </footer>
     </div>
   )
 }
