@@ -29,7 +29,7 @@
     opacity: 40%;
   }
   100% {
-    height: 5;
+    height: 5px;
     opacity: 80%;
   }
 }
