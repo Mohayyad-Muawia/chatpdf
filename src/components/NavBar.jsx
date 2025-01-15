@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <div className="relative text-white border-b border-white container mx-auto flex justify-between items-center">
-      <img className="w-24" src="/assets/chatpdf.svg" alt="logo" />
+      <img className="w-24" src="/assets/chatpdfRobot.svg" alt="logo" />
       <nav className={`${menuOpened ? '' : 'max-md:hidden'}`}>
         <ul className="max-md:absolute left-1/2 bottom-0 max-md:-translate-x-1/2 max-md:translate-y-full max-md:backdrop-blur max-md:w-full z-20 text-center md:flex justify-center md:gap-10 lg:gap-14">
           <li className="py-2">
