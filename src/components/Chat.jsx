@@ -91,9 +91,9 @@ const Chat = () => {
     }
   }
   return (
-    <div className="chat flex flex-col px-40 ">
+    <div className="chat flex flex-col container mx-auto">
       {error && (
-        <div className="absolute text-center w-full left-0 top-20">
+        <div className="absolute text-center w-full left-0 top-28">
           <h2 className="text-red-600 w-fit mx-auto border-2 border-red-600 rounded-lg px-8 animate-pulse ">
             {error}
           </h2>
@@ -101,9 +101,8 @@ const Chat = () => {
       )}
       <div
         className="chat-box flex flex-col items-center justify-center"
-        style={{ height: '72vh' }}
       >
-        <div className="features flex justify-between gap-7 items-center w-8/12">
+        <div className="features flex max-md:flex-col justify-between gap-7 items-center container mx-auto min-h-[72vh] py-5">
           <div className="flex gap-2 items-center flex-col">
             <img src="/assets/feat1.svg" alt="img" />
             <h3 className="font-bold">Clear and precise</h3>
@@ -129,7 +128,7 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className="mssgs-box">
+        <div className="mssgs-box container mx-auto min-h-[60vh] py-5">
           <div className="mssgs">
             {loading && (
               <div className="rep">
@@ -140,7 +139,7 @@ const Chat = () => {
         </div>
       </div>
 
-      <form className="input-box flex-1 mt-5 relative" onSubmit={send}>
+      <form className="input-box flex-1 relative" onSubmit={send}>
         <input
           style={{ background: '#FFFFFF0D', border: '2px solid #FFFFFF4D' }}
           type="text"

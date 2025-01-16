@@ -20,6 +20,10 @@
   @apply hover:text-green-200 transition hover:underline hover:animate-pulse hover:underline-offset-4  px-5 py-2;
 }
 
+.container {
+  @apply px-2
+}
+
 .links {
   opacity: 0;
   transition: 0.3s;
