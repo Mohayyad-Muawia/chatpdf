@@ -31,7 +31,6 @@ const Chat = () => {
 
     // hide features section
     document.querySelector('.features').style.display = 'none'
-    document.querySelector('.mssgs-box').style.height = '100%'
 
     try {
       const response = await fetch(URL, {
@@ -85,7 +84,7 @@ const Chat = () => {
   }, [loading, replay])
 
   const chatScroll = () => {
-    const container = document.querySelector('.mssgs-box')
+    const container = document.querySelector('.mssgs')
     if (container) {
       container.scrollTop = container.scrollHeight
     }
