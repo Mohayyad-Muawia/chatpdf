@@ -128,8 +128,8 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className="mssgs-box container mx-auto min-h-[60vh] py-5">
-          <div className="mssgs">
+        <div className={`mssgs-box container mx-auto py-2 ${msgSent ? 'flex' : 'hidden'}`}>
+          <div className="mssgs min-h-[70vh] max-h-[70vh] overflow-y-auto">
             {loading && (
               <div className="rep">
                 <Loading />
