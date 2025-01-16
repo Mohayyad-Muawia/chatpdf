@@ -2,10 +2,9 @@
   overflow-y: auto;
   scroll-behavior: smooth;
   width: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 
 .mssgs-box::-webkit-scrollbar {
