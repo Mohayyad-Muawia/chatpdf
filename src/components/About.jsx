@@ -137,7 +137,7 @@ const About = () => {
 
       <footer
         className=" p-6 text-xl text-center"
-        style={{ background: '#0A1307' }}
+        style={{ background: '#00000051' }}
       >
         <b>Contact us: </b> <br />
         <a className="font-bold" href="mailto:chatpdf.feedbach@gmail.com">
