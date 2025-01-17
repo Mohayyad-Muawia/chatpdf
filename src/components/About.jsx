@@ -101,10 +101,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className="team mt-20 px-40">
-        <h1 className="font-bold text-4xl mb-5 text-center">The Team</h1>
+      <div className="team my-10">
+        <h1 className="font-bold text-4xl text-center my-5">The Team</h1>
 
-        <div className="members py-12 flex gap-12 flex-wrap">
+        <div className="members flex gap-10 flex-wrap justify-between">
           {teamMembers.map((member, index) => (
             <MemberCard
               key={index}

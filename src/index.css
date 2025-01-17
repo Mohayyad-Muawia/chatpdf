@@ -25,7 +25,7 @@
 }
 
 .links {
-  opacity: 0;
+  opacity: 0.1;
   transition: 0.3s;
 }
 .members:hover .card {
