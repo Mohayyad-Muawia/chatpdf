@@ -53,18 +53,20 @@ const About = () => {
   ]
 
   return (
-    <div className="about" style={{ height: 'calc(100vh - 64px)' }}>
-      <div className="flex h-full items-center">
-        <div className="flex-1 px-16">
-          <h1 className="font-bold text-4xl">About ChatPDF</h1>
-          <p className="opacity-50 my-5">
+    <div className="about container mx-auto px-5 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14">
+        <div>
+          <h1 className="font-bold text-4xl mb-2">About ChatPDF</h1>
+          <p className="opacity-50">
             ChatPDF is your intelligent document assistant. Upload PDF, TXT,
             DOCX, or PPTX files and let the power of AI transform the way you
             read, analyze, and interact with your content. From quick summaries
             to in-depth answers, ChatPDF has you covered.
           </p>
-          <h1 className="font-bold text-4xl mt-8">Why ChatPDF</h1>
-          <p className="opacity-50 mt-5">
+        </div>
+        <div>
+          <h1 className="font-bold text-4xl mb-2">Why ChatPDF</h1>
+          <p className="opacity-50">
             The inspiration behind our project, a chat PDF AI companion for
             managing and interacting with PDF documents, stemmed from a
             recognition of the challenges many individuals face when dealing
@@ -73,10 +75,9 @@ const About = () => {
             user-friendliness.
           </p>
         </div>
-
-        <div className="flex-1 border-l px-16">
-          <h1 className="font-bold text-4xl">How it works</h1>
-          <ol className="mt-5 opacity-50 flex flex-col gap-3">
+        <div>
+          <h1 className="font-bold text-4xl mb-2">How it works</h1>
+          <ol className="opacity-50 flex flex-col">
             <li>
               1. Choose the document you want ChatPDF to help you with. It must
               be PDF, TXT, DOCX, or PPTX.
@@ -87,8 +88,10 @@ const About = () => {
               anything.
             </li>
           </ol>
-          <h1 className="font-bold text-4xl mt-8">Our Goal</h1>
-          <p className="opacity-50 mt-5">
+        </div>
+        <div>
+          <h1 className="font-bold text-4xl mb-2">Our Goal</h1>
+          <p className="opacity-50">
             Our goal is to empower individuals to effortlessly navigate, search,
             annotate, and collaborate on PDF documents, revolutionizing the way
             they interact with digital content. Through innovative technology
