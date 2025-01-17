@@ -97,8 +97,8 @@ const About = () => {
             <p>
               ALX SE alumnus, Information Systems student. ⭐ Mastermind behind
               the creation of intricate structures, chains, and bot
-              functionalities. Full-stack dev with an insatiable hunger for
-              tech and AI
+              functionalities. Full-stack dev with an insatiable hunger for tech
+              and AI
             </p>
             <div className="links pt-6 flex justify-evenly">
               <a href="https://x.com/Omarvx211" target="_blank">
@@ -141,21 +141,27 @@ const About = () => {
               challenges, and bringing innovative projects to life :)
             </p>
             <div className="links pt-6 flex justify-evenly">
-              <a href="http://" target="_blank">
+              <a
+                href="https://x.com/Not_Mohayyad?t=6Uhc1rWtIejVnGl9fa_P2A&s=09"
+                target="_blank"
+              >
                 <img
                   src="/assets/x.svg"
                   className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
                   style={{ padding: 10 }}
                 />
               </a>
-              <a href="http://" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/mohayyad-muawia-722255279?utm_source=share&utm_campaign=share_via&utm_content=profile"
+                target="_blank"
+              >
                 <img
                   src="/assets/linkedin.svg"
                   className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
                   style={{ padding: 10 }}
                 />
               </a>
-              <a href="http://" target="_blank">
+              <a href="https://github.com/Mohayyad-Muawia" target="_blank">
                 <img
                   src="/assets/github.svg"
                   className="w-12 h-12 bg-white rounded-lg hover:-translate-y-2 transition"
@@ -169,7 +175,7 @@ const About = () => {
 
       <footer
         className=" p-6 text-xl text-center"
-        style={{ background: '#0A1307' }}
+        style={{ background: '#00000051' }}
       >
         <b>Contact us: </b> <br />
         <a className="font-bold" href="mailto:chatpdf.feedbach@gmail.com">
