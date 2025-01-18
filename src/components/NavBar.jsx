@@ -12,24 +12,24 @@ const NavBar = () => {
       <nav className={`${menuOpened ? '' : 'max-md:hidden'}`}>
         <ul className="max-md:absolute left-1/2 bottom-0 max-md:-translate-x-1/2 max-md:translate-y-full max-md:backdrop-blur max-md:w-full z-20 text-center md:flex justify-center md:gap-10 lg:gap-14">
           <li className="py-2">
-            <Link to="/" className="navBarItem">
+            <Link onClick={() => setMenuOpened(false)} to="/" className="navBarItem">
               Home
             </Link>
           </li>
           <li className="py-2">
             {/* if location is upload page, show chat. And if chat show upload*/}
             {location.pathname === '/upload' ? (
-              <Link to="/chat" className="navBarItem">
+              <Link onClick={() => setMenuOpened(false)} to="/chat" className="navBarItem">
                 Chat
               </Link>
             ) : (
-              <Link to="/upload" className="navBarItem">
+              <Link onClick={() => setMenuOpened(false)} to="/upload" className="navBarItem">
                 Upload
               </Link>
             )}
           </li>
           <li className="py-2">
-            <Link to="/about" className="navBarItem">
+            <Link onClick={() => setMenuOpened(false)} to="/about" className="navBarItem">
               About
             </Link>
           </li>
