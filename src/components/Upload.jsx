@@ -73,9 +73,9 @@ const Upload = () => {
   }
 
   return (
-    <div className="upload mt-5 flex justify-center relative">
+    <div className="upload my-5 flex justify-center relative container mx-auto">
       <div
-        className={`border-4 p-8 rounded-md w-full max-w-4xl flex transition justify-center items-center ${
+        className={`border-4 p-8 rounded-md flex transition justify-center items-center w-full ${
           isDragging
             ? 'border-gray-800 bg-green-100/20'
             : 'border-gray-500/20 bg-white/10 backdrop-blur-3xl'
