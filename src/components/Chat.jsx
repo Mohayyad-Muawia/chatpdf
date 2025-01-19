@@ -3,6 +3,9 @@ import './chat.css'
 import Loading from './Loading'
 import { marked } from 'marked'
 import { DocumentProvidedContext } from '../context/UploadedContext'
+import { IoAlertCircleSharp } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
+import Error from './Error'
 
 const Chat = () => {
   const { noDoc, setNoDoc } = useContext(DocumentProvidedContext)
@@ -11,8 +14,6 @@ const Chat = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [msgSent, setMsgSent] = useState(false)
-
-  // console.log(noDoc, location.state)
 
   // API logic
   const URL = 'https://chatpdf-9g4j.onrender.com/api/v1/send'
@@ -31,7 +32,6 @@ const Chat = () => {
 
     // hide features section
     document.querySelector('.features').style.display = 'none'
-    document.querySelector('.mssgs-box').style.height = '100%'
 
     try {
       const response = await fetch(URL, {
@@ -80,29 +80,21 @@ const Chat = () => {
 
   //scroll
   useEffect(() => {
+    fetch('https://chatpdf-9g4j.onrender.com/z')
     chatScroll()
   }, [loading, replay])
 
   const chatScroll = () => {
-    const container = document.querySelector('.mssgs-box')
+    const container = document.querySelector('.mssgs')
     if (container) {
       container.scrollTop = container.scrollHeight
     }
   }
   return (
-    <div className="chat flex flex-col px-40 ">
-      {error && (
-        <div className="absolute text-center w-full left-0 top-20">
-          <h2 className="text-red-600 w-fit mx-auto border-2 border-red-600 rounded-lg px-8 animate-pulse ">
-            {error}
-          </h2>
-        </div>
-      )}
-      <div
-        className="chat-box flex flex-col items-center justify-center"
-        style={{ height: '72vh' }}
-      >
-        <div className="features flex justify-between gap-7 items-center w-8/12">
+    <div className="chat flex flex-col container mx-auto">
+      {error && <Error error={error} setError={setError} />}
+      <div className="chat-box flex flex-col items-center justify-center">
+        <div className="features flex max-md:flex-col justify-between gap-7 items-center container mx-auto min-h-[72vh] py-5">
           <div className="flex gap-2 items-center flex-col">
             <img src="/assets/feat1.svg" alt="img" />
             <h3 className="font-bold">Clear and precise</h3>
@@ -128,8 +120,10 @@ const Chat = () => {
           </div>
         </div>
 
-        <div className="mssgs-box">
-          <div className="mssgs">
+        <div
+          className={`mssgs-box py-2 ${msgSent ? 'flex' : 'hidden'}`}
+        >
+          <div className="mssgs h-[calc(100vh-150px)] overflow-y-auto">
             {loading && (
               <div className="rep">
                 <Loading />
@@ -139,7 +133,7 @@ const Chat = () => {
         </div>
       </div>
 
-      <form className="input-box flex-1 mt-5 relative" onSubmit={send}>
+      <form className="input-box flex-1 relative" onSubmit={send}>
         <input
           style={{ background: '#FFFFFF0D', border: '2px solid #FFFFFF4D' }}
           type="text"

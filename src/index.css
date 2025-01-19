@@ -20,8 +20,12 @@
   @apply hover:text-green-200 transition hover:underline hover:animate-pulse hover:underline-offset-4  px-5 py-2;
 }
 
+.container {
+  @apply px-5 md:px-20 lg:px-40
+}
+
 .links {
-  opacity: 0;
+  opacity: 0.1;
   transition: 0.3s;
 }
 .members:hover .card {

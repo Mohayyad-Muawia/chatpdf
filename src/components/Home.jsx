@@ -5,12 +5,8 @@ const Home = () => {
   return (
     <div className="home min-h-screen flex flex-col justify-between">
       <div className="welcome font-bold text-white text-center">
-        <h2 className="text-3xl md:text-6xl">
-          Welcome to
-        </h2>
-        <h1 className="text-5xl md:text-8xl">
-          ChatPDF
-        </h1>
+        <h2 className="text-3xl md:text-6xl">Welcome to</h2>
+        <h1 className="text-5xl md:text-8xl">ChatPDF</h1>
       </div>
 
       <div className="text-white flex flex-col gap-5 md:flex-row md:flex-wrap mt-10 mx-auto">
@@ -45,9 +41,10 @@ const Home = () => {
         ask specific questions, ChatPDF makes it simple and efficient.
       </div>
       <footer className="text-center mt-10">
-      <p className="text-green-200 font-bold text-sm ">
-        &copy; {new Date().getFullYear()} ChatPDF. All rights reserved.
-      </p></footer>
+        <p className="text-green-200 font-bold text-sm ">
+          &copy; {new Date().getFullYear()} ChatPDF. All rights reserved.
+        </p>
+      </footer>
     </div>
   )
 }
