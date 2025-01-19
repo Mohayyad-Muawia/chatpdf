@@ -121,7 +121,7 @@ const Chat = () => {
         </div>
 
         <div
-          className={`mssgs-box container mx-auto py-2 ${msgSent ? 'flex' : 'hidden'}`}
+          className={`mssgs-box py-2 ${msgSent ? 'flex' : 'hidden'}`}
         >
           <div className="mssgs min-h-[70vh] max-h-[70vh] overflow-y-auto">
             {loading && (
