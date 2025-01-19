@@ -21,7 +21,7 @@
 }
 
 .container {
-  @apply px-2
+  @apply px-5 md:px-20 lg:px-40
 }
 
 .links {
