@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <div className="relative text-white border-b border-white container mx-auto h-[15vh] flex justify-between items-center">
-      <img className="max-h-full" src="/assets/chatpdfRobot.svg" alt="logo" />
+      <img className="max-h-full" src="/assets/logo.svg" alt="logo" />
       <nav className={``}>
         <ul
           className={`${menuOpened ? 'scale-y-100' : 'scale-y-0'} md:scale-100 transition-transform origin-top max-md:absolute left-1/2 bottom-0 max-md:-translate-x-1/2 max-md:translate-y-full max-md:backdrop-blur max-md:w-full z-20 text-center md:flex justify-center md:gap-10 lg:gap-14`}
