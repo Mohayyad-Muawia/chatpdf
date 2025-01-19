@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <header className="container mx-auto">
-      <div className="relative text-white h-[15vh] flex justify-between items-center">
+      <div className="relative text-white h-[70px] flex justify-between items-center">
         <img className="max-h-full" src="/assets/logo.svg" alt="logo" />
         <nav className={``}>
           <ul

@@ -123,7 +123,7 @@ const Chat = () => {
         <div
           className={`mssgs-box py-2 ${msgSent ? 'flex' : 'hidden'}`}
         >
-          <div className="mssgs min-h-[70vh] max-h-[70vh] overflow-y-auto">
+          <div className="mssgs h-[calc(100vh-150px)] overflow-y-auto">
             {loading && (
               <div className="rep">
                 <Loading />
