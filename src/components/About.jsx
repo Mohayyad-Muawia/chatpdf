@@ -116,33 +116,29 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="text-center mt-10">
-        <p className="text-md opacity-50">Have questions or feedback?</p>
-        <p className="text-lg font-baloo font-bold">
-          Contact us at{' '}
-          <span
-            onClick={copyToClipboard}
-            className={`cursor-pointer transition-colors duration-300 ease-in-out ${
-              copied
-                ? 'text-green-600'
-                : 'text-blue-600 underline hover:text-blue-800'
-            }`}
-          >
-            {copied
-              ? 'Email copied to clipboard!'
-              : 'chatpdf.feedback@gmail.com'}
-          </span>
-        </p>
-      </div>
 
       <footer
         className=" p-6 text-xl text-center"
         style={{ background: '#00000051' }}
       >
-        <b>Contact us: </b> <br />
-        <a className="font-bold" href="mailto:chatpdf.feedbach@gmail.com">
-          chatpdf.feedbach@gmail.com
-        </a>
+        <div className="text-center mt-10">
+          <p className="text-md opacity-50">Have questions or feedback?</p>
+          <p className="text-lg font-baloo font-bold">
+            Contact us at{' '}
+            <span
+              onClick={copyToClipboard}
+              className={`cursor-pointer transition-colors duration-300 ease-in-out ${
+                copied
+                  ? 'text-green-600'
+                  : 'text-blue-600 underline hover:text-blue-800'
+              }`}
+            >
+              {copied
+                ? 'Email copied to clipboard!'
+                : 'chatpdf.feedback@gmail.com'}
+            </span>
+          </p>
+        </div>
       </footer>
     </div>
   )
