@@ -53,8 +53,8 @@ const About = () => {
   ]
 
   return (
-    <div className="about container mx-auto px-5 py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14">
+    <div className="about px-5 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14 container mx-auto">
         <div>
           <h1 className="font-bold text-4xl mb-2">About ChatPDF</h1>
           <p className="opacity-50">
@@ -101,7 +101,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="team my-10">
+      <div className="team my-10 container mx-auto">
         <h1 className="font-bold text-4xl text-center my-5">The Team</h1>
 
         <div className="members flex gap-10 flex-wrap justify-between">
