@@ -119,7 +119,7 @@ const About = () => {
 
       <footer
         className=" p-6 text-xl text-center"
-        style={{ background: '#00000051' }}
+        style={{ background: '#00000022' }}
       >
         <div className="text-center mt-10">
           <p className="text-md opacity-50">Have questions or feedback?</p>
