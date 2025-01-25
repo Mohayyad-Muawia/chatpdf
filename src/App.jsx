@@ -11,6 +11,7 @@ import Upload from './components/Upload'
 import Chat from './components/Chat'
 import NavBar from './components/NavBar'
 import About from './components/About'
+import Login from './components/Login'
 import { DocumentProvidedProvider } from './context/UploadedContext' // Adjust the import path accordingly
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
   // Redirecting user to login if they're not logged in
   useEffect(() => {
     if (location.pathname === '/chat' || location.pathname === '/upload') {
-      navigate('/login')
+      if (!window.localStorage.getItem('token'))
+        navigate('/login')
     }
   }, [location, navigate])
 
@@ -41,6 +43,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" Component={Home} />
+          <Route path="/login" Component={Login} />
           <Route path="/chat" Component={Chat} />
           <Route path="/upload" Component={Upload} />
           <Route path="/about" Component={About} />
