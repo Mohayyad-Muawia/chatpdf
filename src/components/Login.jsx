@@ -30,7 +30,6 @@ const Login = () => {
                     "Content-Type": "application/json",
                 },
             }).then((res) => {
-                console.log(res)
                 if (res.ok) {
                     console.log('Registration successful');
                     navigate('/chat')
@@ -42,8 +41,25 @@ const Login = () => {
                 }
             });
         } else {
-            // Handle login logic here
-            console.log('Login:', { emailOrUsername: email || username, password });
+            console.log('Login:', { login: email || username, password });
+            fetch('https://chatpdf-9g4j.onrender.com/api/v1/signin', {
+                method: "POST",
+                body: JSON.stringify({ login: email || username, password }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }).then((res) => {
+                if (res.ok) {
+                    console.log('Login successful');
+                    navigate('/chat')
+                    res.json().then((data) => {
+                        window.localStorage.setItem('token', data.token)
+                    })
+                } else {
+                    console.error('Login failed');
+                }
+            }
+            )
         }
     };
 
@@ -63,12 +79,12 @@ const Login = () => {
                     </div>
                 )}
                 <div>
-                    <label>Email:</label>
+                    <label>{ isRegister ? "Email:" : "Username or Email:"}</label>
                     <input
-                        type="email"
+                        type={isRegister ? "email" : "text"}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        required={!isRegister}
+                        required
                     />
                 </div>
                 <div>
