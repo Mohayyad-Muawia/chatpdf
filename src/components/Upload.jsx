@@ -44,7 +44,10 @@ const Upload = () => {
         'https://chatpdf-9g4j.onrender.com/api/v1/upload',
         {
           method: 'POST',
-          body: formData,
+          headers: {
+            authorization: `Bearer ${window.localStorage.getItem('token')}`
+          },
+          body: formData
         }
       )
 
