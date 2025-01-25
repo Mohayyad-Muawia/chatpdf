@@ -4,16 +4,19 @@ import {
   Routes,
   Route,
   useLocation,
+  useNavigate,
 } from 'react-router-dom'
 import Home from './components/Home'
 import Upload from './components/Upload'
 import Chat from './components/Chat'
 import NavBar from './components/NavBar'
 import About from './components/About'
+import Login from './components/Login'
 import { DocumentProvidedProvider } from './context/UploadedContext' // Adjust the import path accordingly
 
 function App() {
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch('https://chatpdf-9g4j.onrender.com/z', {
@@ -25,12 +28,22 @@ function App() {
     })
   }, [])
 
+  // Redirecting user to login if they're not logged in
+  useEffect(() => {
+    if (location.pathname === '/chat' || location.pathname === '/upload') {
+      if (!window.localStorage.getItem('token'))
+        navigate('/login')
+    }
+  }, [location, navigate])
+
   return (
     <div className="min-h-screen ">
-      {location.pathname !== '/' && <NavBar />}
+      {/* rendering navbar on specific pages */}
+      { ['/about', '/upload', '/chat'].includes(location.pathname) && <NavBar />}
       <div>
         <Routes>
           <Route path="/" Component={Home} />
+          <Route path="/login" Component={Login} />
           <Route path="/chat" Component={Chat} />
           <Route path="/upload" Component={Upload} />
           <Route path="/about" Component={About} />

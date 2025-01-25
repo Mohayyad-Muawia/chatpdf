@@ -3,8 +3,6 @@ import './chat.css'
 import Loading from './Loading'
 import { marked } from 'marked'
 import { DocumentProvidedContext } from '../context/UploadedContext'
-import { IoAlertCircleSharp } from 'react-icons/io5'
-import { Link } from 'react-router-dom'
 import Error from './Error'
 
 const Chat = () => {
@@ -36,8 +34,14 @@ const Chat = () => {
     try {
       const response = await fetch(URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: mssg, noDoc }),
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${window.localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({
+          question: mssg,
+          noDoc,
+        }),
       })
 
       if (!response.ok) {
@@ -120,9 +124,7 @@ const Chat = () => {
           </div>
         </div>
 
-        <div
-          className={`mssgs-box py-2 ${msgSent ? 'flex' : 'hidden'}`}
-        >
+        <div className={`mssgs-box py-2 ${msgSent ? 'flex' : 'hidden'}`}>
           <div className="mssgs h-[calc(100vh-150px)] overflow-y-auto">
             {loading && (
               <div className="rep">
