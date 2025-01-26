@@ -58,7 +58,18 @@ const NavBar = () => {
                 About
               </Link>
             </li>
-            <li></li>
+            <li className="py-2">
+              <Link
+                onClick={() => {
+                  setMenuOpened(false)
+                  localStorage.removeItem('token')
+                }}
+                to="/login"
+                className="border border-white transition-colors hover:bg-white hover:text-green-950 font-bold text-white px-2 rounded-md"  
+              >
+                {localStorage.getItem('token') ? 'Logout' : 'Login'}
+              </Link>
+            </li>
           </ul>
         </nav>
         <button
