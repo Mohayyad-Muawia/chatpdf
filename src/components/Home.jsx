@@ -35,7 +35,7 @@ const Home = () => {
           >
             Upload File
           </ButtonLink>
-          
+
           <ButtonLink
             to="/chat"
             icon="/assets/chat.svg"
@@ -43,7 +43,7 @@ const Home = () => {
           >
             Start Chatting
           </ButtonLink>
-          
+
           <ButtonLink to="/about" flexBasis="1 0 100%">
             About Us
           </ButtonLink>
@@ -53,10 +53,10 @@ const Home = () => {
       {/* Description Text */}
       <section className="max-w-2xl px-6 pt-10 mx-auto text-center">
         <p className="text-green-100 font-mono animate-pulse leading-relaxed">
-          ChatPDF is a powerful tool that allows you to easily upload
-          PDF, TXT, DOCX, PPTX files and interact with their content through
-          a chat interface. Whether you need to extract information, summarize
-          text, or ask specific questions, ChatPDF makes it simple and efficient.
+          ChatPDF is a powerful tool that allows you to easily upload PDF, TXT,
+          DOCX, PPTX files and interact with their content through a chat
+          interface. Whether you need to extract information, summarize text, or
+          ask specific questions, ChatPDF makes it simple and efficient.
         </p>
       </section>
 
