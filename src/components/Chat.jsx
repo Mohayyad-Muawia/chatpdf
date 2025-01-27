@@ -143,7 +143,7 @@ const Chat = () => {
           required
           placeholder={
             !msgSent
-              ? 'Example : “Explain quantum computing in simple terms”'
+              ? '“Explain quantum computing in simple terms”'
               : ''
           }
           value={mssg}
