@@ -9,9 +9,9 @@ const NavBar = () => {
 
   return (
     <header className="container mx-auto">
-      <div className="relative text-white h-[70px] flex justify-between items-center">
+      <div className="relative text-white h-[70px] flex justify-end items-center">
         <img
-          className="max-h-full cursor-pointer"
+          className="max-h-full cursor-pointer me-auto"
           onClick={() => navigate('/')}
           src="/assets/logo.svg"
           alt="logo"
@@ -58,9 +58,21 @@ const NavBar = () => {
                 About
               </Link>
             </li>
-            <li></li>
+            <li className="py-2">
+              
+            </li>
           </ul>
         </nav>
+        <Link
+                onClick={() => {
+                  setMenuOpened(false)
+                  localStorage.removeItem('token')
+                }}
+                to="/login"
+                className="border py-1 max-md:mx-3 border-white transition-colors hover:bg-white hover:text-green-950 font-bold text-white px-2 rounded-md"  
+              >
+                {localStorage.getItem('token') ? 'Logout' : 'Login'}
+              </Link>
         <button
           className="md:hidden "
           onClick={() => setMenuOpened(!menuOpened)}
