@@ -1,61 +1,80 @@
-import { useContext, useEffect, useState } from 'react'
-import './chat.css'
-import Loading from './Loading'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { marked } from 'marked'
-import { DocumentProvidedContext } from '../context/UploadedContext'
+import Loading from './Loading'
 import Error from './Error'
+import { DocumentProvidedContext } from '../context/UploadedContext'
+import './chat.css'
 
 const Chat = () => {
-  const { noDoc, setNoDoc } = useContext(DocumentProvidedContext)
-  const [mssg, setMssg] = useState('')
-  const [replay, setReplay] = useState(null)
+  const { noDoc } = useContext(DocumentProvidedContext)
+  const [input, setInput] = useState('')
+  const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-  const [msgSent, setMsgSent] = useState(false)
+  const messagesEndRef = useRef(null)
 
-  // API logic
-  const URL = 'https://chatpdf-9g4j.onrender.com/api/v1/send'
+  const API_URL = 'https://chatpdf-9g4j.onrender.com/api/v1/send'
 
-  const handle_change = (event) => {
-    setMssg(event.target.value)
+  const FeatureCard = ({ icon, title, text }) => (
+    <div className="flex gap-2 items-center flex-col">
+      <img src={icon} alt={title} />
+      <h3 className="font-bold">{title}</h3>
+      <p className="text-center opacity-50">{text}</p>
+    </div>
+  )
+
+  const Message = ({ content, isResponse }) => (
+    <div className={`${isResponse ? 'rep' : 'msg'}`}>
+      {isResponse ? (
+        <div dangerouslySetInnerHTML={{ __html: marked(content) }} />
+      ) : (
+        content
+      )}
+    </div>
+  )
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const send = async (event) => {
-    event.preventDefault()
-    setError(null)
-    setReplay(null)
-    setLoading(true)
-    appendMsg(mssg)
-    setMssg('')
+  useEffect(scrollToBottom, [messages])
 
-    // hide features section
-    document.querySelector('.features').style.display = 'none'
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!input.trim()) return
+
+    setError(null)
+    setLoading(true)
+    const currentQuestion = input.trim()
+
+    // Add user message
+    setMessages((prev) => [
+      ...prev,
+      { content: currentQuestion, isResponse: false },
+    ])
+    setInput('')
 
     try {
-      const response = await fetch(URL, {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          authorization: `Bearer ${window.localStorage.getItem('token')}`
+          authorization: `Bearer ${localStorage.getItem('token')}`,
         },
-        body: JSON.stringify({
-          question: mssg,
-          noDoc,
-        }),
+        body: JSON.stringify({ question: currentQuestion, noDoc }),
       })
 
       if (!response.ok) {
         const { error } = await response.json()
-        console.error(error)
-        if (error.includes('length as the number of dimensions'))
-          throw new Error('Failed to respond. Try reuploading the document.')
-
-        throw new Error('Failed to fetch response. Please try again.')
+        throw new Error(
+          error?.includes('dimensions')
+            ? 'Failed to respond. Try reuploading the document.'
+            : 'Failed to fetch response. Please try again.'
+        )
       }
 
-      const json = await response.json()
-      setReplay(json.answer)
-      appendRep(json.answer)
+      const { answer } = await response.json()
+      setMessages((prev) => [...prev, { content: answer, isResponse: true }])
     } catch (err) {
       setError(err.message || 'Something went wrong.')
     } finally {
@@ -63,91 +82,66 @@ const Chat = () => {
     }
   }
 
-  // messages logic
-  const appendMsg = (content) => {
-    const mssgsBox = document.querySelector('.mssgs')
-    let msg = document.createElement('div')
-    msg.classList.add('msg')
-    msg.textContent = content
-    mssgsBox.appendChild(msg)
-    setMsgSent(true)
-  }
-
-  const appendRep = (content) => {
-    const mssgsBox = document.querySelector('.mssgs')
-    let res = document.createElement('div')
-    res.classList.add('rep')
-    let markedText = marked(content)
-    res.innerHTML = markedText
-    mssgsBox.appendChild(res)
-  }
-
-  //scroll
-  useEffect(() => {
-    fetch('https://chatpdf-9g4j.onrender.com/z')
-    chatScroll()
-  }, [loading, replay])
-
-  const chatScroll = () => {
-    const container = document.querySelector('.mssgs')
-    if (container) {
-      container.scrollTop = container.scrollHeight
-    }
-  }
   return (
     <div className="chat flex flex-col container mx-auto">
       {error && <Error error={error} setError={setError} />}
+
       <div className="chat-box flex flex-col items-center justify-center">
-        <div className="features flex max-md:flex-col justify-between gap-7 items-center container mx-auto min-h-[72vh] py-5">
-          <div className="flex gap-2 items-center flex-col">
-            <img src="/assets/feat1.svg" alt="img" />
-            <h3 className="font-bold">Clear and precise</h3>
-            <p className=" text-center opacity-50">
-              Pariatur sint laborum cillum aute consectetur irure.
-            </p>
+        {messages.length === 0 ? (
+          <div className="features flex max-md:flex-col justify-between gap-7 items-center container mx-auto min-h-[72vh] py-5">
+            <FeatureCard
+              icon="/assets/feat1.svg"
+              title="Clear and precise"
+              text="Pariatur sint laborum cillum aute consectetur irure."
+            />
+            <FeatureCard
+              icon="/assets/feat2.svg"
+              title="Personalized answers"
+              text="Pariatur sint laborum cillum aute consectetur irure."
+            />
+            <FeatureCard
+              icon="/assets/feat3.svg"
+              title="Increased efficiency"
+              text="Pariatur sint laborum cillum aute consectetur irure."
+            />
           </div>
-
-          <div className="flex gap-2 items-center flex-col">
-            <img src="/assets/feat2.svg" alt="img" />
-            <h3 className="font-bold">Personalized answers</h3>
-            <p className="text-center opacity-50">
-              Pariatur sint laborum cillum aute consectetur irure.
-            </p>
+        ) : (
+          <div className="mssgs-box py-2 flex w-full">
+            <div className="mssgs h-[calc(100vh-150px)] overflow-y-auto w-full">
+              {messages.map((msg, index) => (
+                <Message
+                  key={index}
+                  content={msg.content}
+                  isResponse={msg.isResponse}
+                />
+              ))}
+              {loading && (
+                <div className="rep">
+                  <Loading />
+                </div>
+              )}
+              <div ref={messagesEndRef} />
+            </div>
           </div>
-
-          <div className="flex gap-2 items-center flex-col">
-            <img src="/assets/feat3.svg" alt="img" />
-            <h3 className="font-bold">Increased efficiency</h3>
-            <p className="text-center opacity-50">
-              Pariatur sint laborum cillum aute consectetur irure.
-            </p>
-          </div>
-        </div>
-
-        <div className={`mssgs-box py-2 ${msgSent ? 'flex' : 'hidden'}`}>
-          <div className="mssgs h-[calc(100vh-150px)] overflow-y-auto">
-            {loading && (
-              <div className="rep">
-                <Loading />
-              </div>
-            )}
-          </div>
-        </div>
+        )}
       </div>
 
-      <form className="input-box flex-1 relative" onSubmit={send}>
+      <form
+        className="input-box flex-1 relative px-4 mb-4"
+        onSubmit={handleSubmit}
+      >
         <input
           style={{ background: '#FFFFFF0D', border: '2px solid #FFFFFF4D' }}
           type="text"
           className="outline-none rounded-lg py-3 px-5 w-full"
           required
           placeholder={
-            !msgSent
-              ? '“Explain quantum computing in simple terms”'
+            messages.length === 0
+              ? 'Example : “Explain quantum computing in simple terms”'
               : ''
           }
-          value={mssg}
-          onChange={handle_change}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
         />
         <button
           style={{
@@ -155,13 +149,14 @@ const Chat = () => {
             width: 35,
             height: 35,
             background: '#087C4C',
-            right: 8,
+            right: 20,
             top: 8,
           }}
           type="submit"
           className="send rounded-md"
+          disabled={loading}
         >
-          <img src="/assets/send.svg" className="p-2" alt="" />
+          <img src="/assets/send.svg" className="p-2" alt="Send message" />
         </button>
       </form>
     </div>
