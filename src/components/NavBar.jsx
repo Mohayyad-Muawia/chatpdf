@@ -1,86 +1,137 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { FaBars } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
 
 const NavBar = () => {
-  const location = useLocation()
+  const { pathname } = useLocation()
   const [menuOpened, setMenuOpened] = useState(false)
   const navigate = useNavigate()
+  const isAuthenticated = !!localStorage.getItem('token')
+
+  const routes = [
+    { path: '/', label: 'Home' },
+    {
+      path: pathname === '/upload' ? '/chat' : '/upload',
+      label: pathname === '/upload' ? 'Chat' : 'Upload',
+    },
+    { path: '/about', label: 'About' },
+  ]
 
   const handleNavigation = (path) => {
     setMenuOpened(false)
     navigate(path)
   }
 
-  const isAuthenticated = !!localStorage.getItem('token')
-
   const handleLogout = () => {
-    setMenuOpened(false)
     localStorage.removeItem('token')
-    navigate('/login')
+    handleNavigation('/login')
   }
+
+  useEffect(() => {
+    const closeMenu = (e) => {
+      if (
+        !e.target.closest('nav') &&
+        !e.target.closest('button[aria-label="Toggle navigation menu"]')
+      ) {
+        setMenuOpened(false)
+      }
+    }
+
+    if (menuOpened) {
+      document.addEventListener('click', closeMenu)
+    }
+    return () => document.removeEventListener('click', closeMenu)
+  }, [menuOpened])
 
   return (
     <header className="container mx-auto">
-      <div className="relative text-white h-[70px] flex justify-end items-center">
+      <div className="relative h-[70px] flex justify-between items-center px-4">
         {/* Logo */}
-        <img
-          src="/assets/logo.svg"
-          alt="logo"
-          className="max-h-full cursor-pointer me-auto"
+        <button
           onClick={() => handleNavigation('/')}
-        />
+          className="hover:opacity-80 transition-opacity z-60"
+          aria-label="Home"
+        >
+          <img
+            src="/assets/logo.svg"
+            alt="ChatPDF Logo"
+            className="h-12 md:h-14"
+          />
+        </button>
 
-        {/* Navigation Menu */}
-        <nav>
-          <ul
-            className={`${
-              menuOpened ? 'scale-y-100' : 'scale-y-0'
-            } md:scale-100 transition-transform origin-top max-md:absolute left-1/2 bottom-0 max-md:-translate-x-1/2 max-md:translate-y-full max-md:backdrop-blur max-md:w-full z-20 text-center md:flex justify-center md:gap-10 lg:gap-14`}
-          >
-            {[
-              { path: '/', label: 'Home' },
-              {
-                path: location.pathname === '/upload' ? '/chat' : '/upload',
-                label: location.pathname === '/upload' ? 'Chat' : 'Upload',
-              },
-              { path: '/about', label: 'About' },
-            ].map((item) => (
-              <li key={item.path} className="py-2">
+        {/* Navigation */}
+        <nav className="flex items-center gap-6">
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex items-center gap-8 lg:gap-12">
+            {routes.map(({ path, label }) => (
+              <li key={path}>
                 <Link
-                  to={item.path}
-                  className="navBarItem"
-                  onClick={() => setMenuOpened(false)}
+                  to={path}
+                  className={`navBarItem ${pathname === path ? 'text-green-300' : ''}`}
                 >
-                  {item.label}
+                  {label}
                 </Link>
               </li>
             ))}
           </ul>
+
+          {/* Auth Button */}
+          <button
+            onClick={
+              isAuthenticated ? handleLogout : () => handleNavigation('/login')
+            }
+            className="border border-white/60 hover:border-white px-4 py-1.5 rounded-md
+              transition-all hover:bg-white/10 font-semibold hidden md:block"
+          >
+            {isAuthenticated ? 'Logout' : 'Login'}
+          </button>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden p-2 hover:text-green-300 z-50"
+            onClick={() => setMenuOpened(!menuOpened)}
+            aria-label="Toggle navigation menu"
+          >
+            {menuOpened ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
         </nav>
 
-        {/* Auth Button */}
-        <button
-          onClick={
-            isAuthenticated ? handleLogout : () => handleNavigation('/login')
-          }
-          className="border py-1 max-md:mx-3 border-white transition-colors hover:bg-white hover:text-green-950 font-bold text-white px-2 rounded-md"
+        {/* Mobile Menu */}
+        <ul
+          className={`fixed inset-0 pt-20 bg-black/95 backdrop-blur-sm
+            md:hidden z-50 overflow-hidden transition-all duration-300
+            ${menuOpened ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         >
-          {isAuthenticated ? 'Logout' : 'Login'}
-        </button>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden"
-          onClick={() => setMenuOpened((prev) => !prev)}
-          aria-label="Toggle Menu"
-        >
-          <FaBars size={24} />
-        </button>
+          <div className="container mx-auto px-4">
+            {routes.map(({ path, label }) => (
+              <li key={path} className="border-b border-white/10">
+                <Link
+                  to={path}
+                  onClick={() => setMenuOpened(false)}
+                  className="block py-4 hover:bg-white/5 transition-colors text-xl"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+            <li className="mt-8">
+              <button
+                onClick={
+                  isAuthenticated
+                    ? handleLogout
+                    : () => handleNavigation('/login')
+                }
+                className="w-full py-4 text-xl hover:bg-white/5 transition-colors"
+              >
+                {isAuthenticated ? 'Logout' : 'Login'}
+              </button>
+            </li>
+          </div>
+        </ul>
       </div>
 
       {/* Separator */}
-      <div className="separator h-[1px] bg-white"></div>
+      <div className="h-px bg-white/20 mx-4" />
     </header>
   )
 }
