@@ -89,10 +89,10 @@ const NavBar = () => {
           {/* Mobile Menu Toggle */}
           <button
             className="md:hidden p-2 hover:text-green-300 z-50"
-            onClick={() => setMenuOpened(!menuOpened)}
+            onClick={() => {setMenuOpened(true)}}
             aria-label="Toggle navigation menu"
           >
-            {menuOpened ? <FaTimes size={24} /> : <FaBars size={24} />}
+            <FaBars size={24} />
           </button>
         </nav>
 
@@ -103,6 +103,12 @@ const NavBar = () => {
             ${menuOpened ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         >
           <div className="container mx-auto px-4">
+            <button
+              className="p-2 absolute top-5 right-5"
+              onClick={() => setMenuOpened(false)}
+            >
+              <FaTimes size={24} />
+            </button>
             {routes.map(({ path, label }) => (
               <li key={path} className="border-b border-white/10">
                 <Link
