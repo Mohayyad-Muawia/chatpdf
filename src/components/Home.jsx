@@ -61,10 +61,11 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="mt-10 mb-4">
-        <p className="text-green-200 font-bold text-sm">
+      <footer className="mt-8 text-center text-green-200 font-bold text-sm">
+        <p>
           &copy; {new Date().getFullYear()} ChatPDF. All rights reserved.
         </p>
+        <p>Made with ❤️ from Sudan 🇸🇩</p>
       </footer>
     </div>
   )
