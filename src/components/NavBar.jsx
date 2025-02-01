@@ -6,7 +6,6 @@ const NavBar = () => {
   const { pathname } = useLocation()
   const [menuOpened, setMenuOpened] = useState(false)
   const navigate = useNavigate()
-  const isAuthenticated = !!localStorage.getItem('token')
 
   const routes = [
     { path: '/', label: 'Home' },
@@ -75,17 +74,6 @@ const NavBar = () => {
             ))}
           </ul>
 
-          {/* Auth Button */}
-          <button
-            onClick={
-              isAuthenticated ? handleLogout : () => handleNavigation('/login')
-            }
-            className="border border-white/60 hover:border-white px-4 py-1.5 rounded-md
-              transition-all hover:bg-white/10 font-semibold hidden md:block"
-          >
-            {isAuthenticated ? 'Logout' : 'Login'}
-          </button>
-
           {/* Mobile Menu Toggle */}
           <button
             className="md:hidden p-2 hover:text-green-300 z-50"
@@ -120,18 +108,6 @@ const NavBar = () => {
                 </Link>
               </li>
             ))}
-            <li className="mt-8">
-              <button
-                onClick={
-                  isAuthenticated
-                    ? handleLogout
-                    : () => handleNavigation('/login')
-                }
-                className="w-full py-4 text-xl hover:bg-white/5 transition-colors"
-              >
-                {isAuthenticated ? 'Logout' : 'Login'}
-              </button>
-            </li>
           </div>
         </ul>
       </div>

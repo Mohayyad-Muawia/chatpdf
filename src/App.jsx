@@ -28,14 +28,6 @@ function App() {
     })
   }, [])
 
-  // Redirecting user to login if they're not logged in
-  useEffect(() => {
-    if (location.pathname === '/chat' || location.pathname === '/upload') {
-      if (!window.localStorage.getItem('token'))
-        navigate('/login')
-    }
-  }, [location, navigate])
-
   return (
     <div className="min-h-screen ">
       {/* rendering navbar on specific pages */}
