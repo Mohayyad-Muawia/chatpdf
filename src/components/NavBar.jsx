@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
 
 const NavBar = () => {
   const { pathname } = useLocation()
@@ -73,6 +74,16 @@ const NavBar = () => {
               </li>
             ))}
           </ul>
+
+          {/* User Authentication */}
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <button className='border rounded px-2 py-1 hover:bg-white hover:text-[#087C4C] transition-colors font-bold'>
+              <SignInButton />
+            </button>
+          </SignedOut>
 
           {/* Mobile Menu Toggle */}
           <button
