@@ -16,7 +16,6 @@ import { DocumentProvidedProvider } from './context/UploadedContext' // Adjust t
 
 function App() {
   const location = useLocation()
-  const navigate = useNavigate()
 
   useEffect(() => {
     fetch('https://chatpdf-9g4j.onrender.com/z', {
