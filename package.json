@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.22.10",
+    "@clerk/themes": "^2.2.16",
     "marked": "^15.0.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
