@@ -4,7 +4,7 @@ import Loading from './Loading'
 import Error from './Error'
 import { DocumentProvidedContext } from '../context/UploadedContext'
 import './chat.css'
-import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, SignInButton, useAuth } from '@clerk/clerk-react'
 
 const Chat = () => {
   const { noDoc } = useContext(DocumentProvidedContext)
@@ -13,6 +13,7 @@ const Chat = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const messagesEndRef = useRef(null)
+  const { getToken } = useAuth()
 
   const API_URL = 'https://chatpdf-9g4j.onrender.com/api/v1/send'
 
@@ -60,6 +61,7 @@ const Chat = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          authorization: `Bearer ${await getToken()}`,
         },
         body: JSON.stringify({ question: currentQuestion, noDoc }),
       })
@@ -85,10 +87,10 @@ const Chat = () => {
   return (
     <div className="chat flex flex-col container mx-auto">
       <SignedOut>
-        <p className='text-center mt-10'>
+        <p className="text-center mt-10">
           You need to be signed in to access this page.
         </p>
-        <SignInButton className='border rounded px-2 py-1 hover:bg-white hover:text-[#087C4C] transition-colors font-bold block mx-auto my-5' />
+        <SignInButton className="border rounded px-2 py-1 hover:bg-white hover:text-[#087C4C] transition-colors font-bold block mx-auto my-5" />
       </SignedOut>
       <SignedIn>
         {error && <Error error={error} setError={setError} />}

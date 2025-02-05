@@ -4,13 +4,14 @@ import Loading from './Loading'
 import { DocumentProvidedContext } from '../context/UploadedContext'
 import { IoCheckmarkDoneSharp } from 'react-icons/io5'
 import Error from './Error'
-import { SignInButton, SignedIn, SignedOut } from '@clerk/clerk-react'
+import { SignInButton, SignedIn, SignedOut, useAuth } from '@clerk/clerk-react'
 
 const Upload = () => {
   const [isDragging, setIsDragging] = useState(false)
   const [loading, setLoading] = useState(false)
   const [uploadStatus, setUploadStatus] = useState(null) // null | 'success' | 'error'
   const { noDoc, setNoDoc } = useContext(DocumentProvidedContext)
+  const { getToken } = useAuth()
 
   const handleDragOver = (e) => {
     e.preventDefault()
@@ -41,16 +42,13 @@ const Upload = () => {
       const formData = new FormData()
       formData.append('file', file)
 
-      const response = await fetch(
-        'https://chatpdf-9g4j.onrender.com/api/v1/upload',
-        {
-          method: 'POST',
-          headers: {
-            authorization: `Bearer ${window.localStorage.getItem('token')}`,
-          },
-          body: formData,
-        }
-      )
+      const response = await fetch('https://chatpdf-9g4j.onrender.com/api/v1/upload', {
+        method: 'POST',
+        headers: {
+          authorization: `Bearer ${await getToken()}`,
+        },
+        body: formData,
+      })
 
       if (response.ok) {
         setUploadStatus('success')
