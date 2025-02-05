@@ -69,7 +69,7 @@ const Upload = () => {
         <p className="text-center mt-10">
           You need to be signed in to access this page.
         </p>
-        <SignInButton className="border rounded px-2 py-1 hover:bg-white hover:text-[#087C4C] transition-colors font-bold block mx-auto my-5" />
+        <SignInButton forceRedirectUrl={"/"} className="border rounded px-2 py-1 hover:bg-white hover:text-[#087C4C] transition-colors font-bold block mx-auto my-5" />
       </SignedOut>
       <SignedIn>
         <div className="upload my-5 flex justify-center relative container mx-auto">
