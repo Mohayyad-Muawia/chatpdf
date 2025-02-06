@@ -81,7 +81,7 @@ const NavBar = () => {
           </SignedIn>
           <SignedOut>
             <button className='border rounded px-2 py-1 hover:bg-white hover:text-[#087C4C] transition-colors font-bold'>
-              <SignInButton forceRedirectUrl={"/"} />
+              <SignInButton />
             </button>
           </SignedOut>
 

@@ -90,7 +90,7 @@ const Chat = () => {
         <p className="text-center mt-10">
           You need to be signed in to access this page.
         </p>
-        <SignInButton forceRedirectUrl={"/"} className="border rounded px-2 py-1 hover:bg-white hover:text-[#087C4C] transition-colors font-bold block mx-auto my-5" />
+        <SignInButton className="border rounded px-2 py-1 hover:bg-white hover:text-[#087C4C] transition-colors font-bold block mx-auto my-5" />
       </SignedOut>
       <SignedIn>
         {error && <Error error={error} setError={setError} />}
