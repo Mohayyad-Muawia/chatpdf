@@ -22,3 +22,4 @@ ChatPDF is a powerful tool that allows you to easily upload PDF, TXT, DOCX, PPTX
 - Hassan Abdelwahid
 - Omar Abdulrahim
 - Mohayyad Muawia
+- Husam Mohamed
