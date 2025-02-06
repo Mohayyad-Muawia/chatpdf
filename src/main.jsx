@@ -18,7 +18,9 @@ createRoot(document.getElementById('root')).render(
       afterSignOutUrl="/"
       appearance={{
         baseTheme: dark,
-      }}
+        variables: {
+          colorBackground: '#020f07',
+      }}}
     >
       <App />
     </ClerkProvider>
