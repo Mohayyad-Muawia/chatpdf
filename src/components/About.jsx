@@ -114,7 +114,7 @@ const About = () => {
       <div className="team my-10 container mx-auto">
         <h1 className="font-bold text-4xl text-center my-5">The Team</h1>
 
-        <div className="members flex gap-10 flex-wrap justify-between">
+        <div className="members flex gap-10 flex-wrap justify-center">
           {teamMembers.map((member, index) => (
             <MemberCard
               key={index}

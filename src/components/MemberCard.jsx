@@ -2,7 +2,7 @@ import React from 'react'
 
 const MemberCard = ({ name, image, description, links }) => {
   return (
-    <div className="card flex-1 min-w-[250px] rounded-2xl shadow-lg">
+    <div className="card flex-1 min-w-[250px] max-w-[350px] rounded-2xl shadow-lg">
       <img
         className="w-full h-80 object-cover rounded-2xl"
         src={image}
