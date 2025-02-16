@@ -50,6 +50,16 @@ const About = () => {
         { href: 'http://', icon: '/assets/github.svg' },
       ],
     },
+    {
+      name: 'Husam Mohamed',
+      image: '/assets/husam.jpeg',
+      description:
+        'Web Developer with a focus on front-end development using React, Next.js, and TailwindCSS. Have experience with backend development and building APIs using Node.js and Express.',
+      links: [
+        { href: 'https://linkedin.com/in/husamXA1', icon: '/assets/linkedin.svg' },
+        { href: 'https://github.com/husamXA1', icon: '/assets/github.svg' },
+      ],
+    },
   ]
 
   return (
