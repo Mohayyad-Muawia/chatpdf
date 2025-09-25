@@ -18,7 +18,7 @@ const About = () => {
         "Student at Alneelen University, majoring in ALX Software Engineering within the Computer Science Department. Alongside my technical studies, I'm also skilled in logo design, blending creativity with software expertise.",
       links: [
         { href: 'http://', icon: '/assets/x.svg' },
-        { href: 'http://', icon: '/assets/linkedin.svg' },
+        { href: 'https://www.linkedin.com/in/hassan-abdelazim-124730262', icon: '/assets/linkedin.svg' },
         { href: 'http://', icon: '/assets/github.svg' },
       ],
     },
@@ -46,7 +46,7 @@ const About = () => {
         'A passionate web developer who loves crafting websites. When I’m not coding, you’ll find me exploring new techs, tackling challenges, and bringing innovative projects to life :)',
       links: [
         { href: 'http://', icon: '/assets/x.svg' },
-        { href: 'http://', icon: '/assets/linkedin.svg' },
+        { href: 'https://www.linkedin.com/in/mohayyad-muawia-722255279', icon: '/assets/linkedin.svg' },
         { href: 'http://', icon: '/assets/github.svg' },
       ],
     },
